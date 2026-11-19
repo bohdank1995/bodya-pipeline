@@ -1,6 +1,6 @@
 ---
 name: "create-magic"
-description: "Run when Bodya says \"let's create magic\", starts a new project, or wants to formulate a vision, a target audience, desired outcomes, what to validate, or hypotheses with success bars. Guides one project through his validation pipeline step by step, using the notes in My Brain/Rules and templates, and saves each result as a note in the project folder. This version covers the pipeline up to the step Hypotheses + bar."
+description: "Run when Bodya says \"let's create magic\", starts a new project, or wants to formulate a vision, a target audience, desired outcomes, what to validate, or hypotheses with success bars. Guides one project through his validation pipeline step by step, using the notes in My Brain/Rules and templates, and saves each result as a note in the project folder. This version covers the pipeline up to the step Choose how to validate, including the next steps."
 ---
 
 # Create magic
@@ -19,7 +19,7 @@ Validated outcome → Explore ways to achieve it → Pick one way → Hypotheses
 
 Source files: GitHub repo `bodya-pipeline`, folder `diagrams/` (`idea-validation` and `solution-validation`).
 
-**This version covers layer 1 up to "Hypotheses + bar".** Everything after that is not built yet. Layer 2 is context only.
+**This version covers layer 1 up to "Choose how to validate", including its next steps.** Everything after that is not built yet. Layer 2 is context only.
 
 ## Where things live
 
@@ -31,6 +31,7 @@ Rules and templates, in `My Brain/Rules and templates/`:
 - `Desired outcomes rules`
 - `Choose what to validate rules`
 - `Hypothesis rules`
+- `Choose how to validate rules`
 
 Project notes, in `My Brain/<Project>/`:
 - `Vision.md`, `Target Audience.md`, `Desired Outcomes.md`, `Validation Plan.md`
@@ -48,11 +49,21 @@ Read the project folder. Take the first row that matches.
 | Audience exists, no `Desired Outcomes.md` | 3. Desired outcomes |
 | Outcomes exist, no `Validation Plan.md`, or the last entry has no "What we validate" | 4. Choose what to validate |
 | The last entry has "What we validate" but no hypotheses table | 5. Hypotheses + bar |
-| The last entry has a hypotheses table | Stop. The next step, Choose how to validate, is not built yet |
+| The last entry has a hypotheses table but no methods table | 6. Choose how to validate |
+| The last entry has a methods table but no next steps table | 6. Choose how to validate, part 2: next steps |
+| The last entry has a next steps table | Stop. The next step, Validate + collect insights, is not built yet |
 
 If he says he is starting a project, begin at stage 1. If he names a stage whose earlier stage is missing, say what is missing and offer to do it first.
 
-Say the stage and the next step in one line, then begin.
+Say the stage in one line.
+
+## Ask before every stage
+
+Before starting any stage, including the first one, ask one yes or no question that names it, and wait for his answer. For example: "Should we now choose how to validate?" Do not start the stage until he says yes. Ask again before part 2 of a stage.
+
+## Chat first, file second
+
+Show everything in the chat: the options, the drafts, the questions and the tables. Write to the project file only the result he agreed to, after his OK. Show every table in the chat even though the same table is also saved in Obsidian.
 
 ## How to work every stage
 
@@ -105,15 +116,32 @@ Read `Hypothesis rules` and the entry in `Validation Plan.md`.
 6. Ask for the rule for the whole claim, and propose one if he has none (for example, at least 3 of 4 reach their bar).
 7. Show the table. After his OK, write it into the entry in `Validation Plan.md` with every status "Not tested".
 
+When showing hypotheses for the first time, say that H means hypothesis and that later tables refer to them by number.
+
+## Stage 6. Choose how to validate
+
+Read `Choose how to validate rules` and the entry in `Validation Plan.md`.
+
+**Part 1: methods**
+1. Show the list of methods from the rules, as a table, in the chat.
+2. Suggest methods for the entry's hypotheses, following the rules for choosing: match each method to its success bar, cheapest honest method, "do" over "say", at most two methods per lap.
+3. Show the suggestion as the methods table from the rules: grouped by method, the method named once, one row per hypothesis, columns in this order: Method, Tests, How, Success bar, Sample, Needed first. Copy each success bar from the hypotheses table without changing it.
+4. He chooses. After his OK, write the methods table under "How to validate" in the entry, and update the entry's status.
+
+**Part 2: next steps**
+1. Ask: "Should we now write the next steps?" Wait for yes.
+2. Draft 3 to 7 next steps as the next steps table from the rules: Step, Produces, Needs, Time box, Needs other people. Each step starts with a verb, holds one action and produces something visible. The first step can start today. Steps end where "Validate + collect insights" starts. Mark time boxes as rough estimates.
+3. Show the table in the chat. After his OK, write it into the entry and update the entry's status.
+
 ## After each stage
 
 Show one progress line, then the next step:
 
-`Vision ✓ → Audience ✓ → Outcomes ✓ → Choose what ✓ → Hypotheses + bar ✓ → Choose how to validate (not built yet)`
+`Vision ✓ → Audience ✓ → Outcomes ✓ → Choose what ✓ → Hypotheses + bar ✓ → Choose how ✓ → Validate + collect insights (not built yet)`
 
 ## Not built yet
 
-Choose how to validate, Validate, Document, the decision, layer 2, the X post and the portfolio page. When a project reaches the end of stage 5, say that this version stops here, and leave the plan as it is.
+Validate + collect insights, Document, the decision, layer 2, the X post and the portfolio page. When a project reaches the end of stage 6, say that this version stops here, and leave the plan as it is.
 
 ## Rules
 

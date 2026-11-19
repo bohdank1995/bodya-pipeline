@@ -2638,6 +2638,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     /* Summary rail: the reader measures the viewport and enables it only when the
        diagram keeps its readable width beside the notes. */
     .reader-rail { display: contents; }
+    /* Inside another page (an iframe), show only the diagram: no notes, no index. */
+    html[data-archify-embedded="true"] .reader-rail,
+    html[data-archify-embedded="true"] .rail-reveal { display: none !important; }
     html[data-reader-rail="true"] .container {
       display: grid;
       grid-template-columns: minmax(0, 1fr) var(--archify-rail-width);
@@ -5622,52 +5625,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </div>
     <!-- Info Cards -->
     <div class="cards">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot cyan"></div>
-          <h3>Choose the approach</h3>
-        </div>
-        <ul>
-          <li>1. Validated outcome: the result of layer 1. Example: owners really want to save time, with evidence.</li>
-          <li>2. Explore ways to achieve it: list the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors.</li>
-          <li>3. Pick one way: choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply.</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot violet"></div>
-          <h3>Plan the test</h3>
-        </div>
-        <ul>
-          <li>4. Hypotheses + bar: if we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules.</li>
-          <li>5. Choose how to validate: pick the cheapest honest test, such as a mockup, a manual version or a small build.</li>
-          <li>6. Minimal requirements: write the smallest version that still tests the hypothesis.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot emerald"></div>
-          <h3>Build + learn</h3>
-        </div>
-        <ul>
-          <li>7. Build: make that version quickly, with AI where it helps.</li>
-          <li>8. Validate: put it in front of real users or real data. Collect insights and evidence.</li>
-          <li>9. Document + decide: compare the result with the bar, write down what you learned, then keep, narrow, change or stop.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot amber"></div>
-          <h3>Share + repeat</h3>
-        </div>
-        <ul>
-          <li>10. Share: turn the lap into an X post and a portfolio case, including when it failed.</li>
-          <li>11. Next lap or layer: repeat with the updated list, or go deeper to the next layer: value and price.</li>
-        </ul>
-      </div>
     </div>
     <nav class="node-outline no-print" id="node-outline" hidden aria-labelledby="node-outline-title">
       <div class="node-outline-head">
@@ -10524,7 +10482,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       // Rail modes: "true" docks beside the diagram, "collapsed" leaves only the
       // reveal control, "overlay" opens a drawer when docking would break the
       // readable floor, and "bottom" stacks notes and index below the diagram.
+      var archifyEmbedded = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
+      if (archifyEmbedded) document.documentElement.setAttribute('data-archify-embedded', 'true');
       function setRail(mode) {
+        if (archifyEmbedded) mode = null;
         if (mode) {
           html.setAttribute('data-reader-rail', mode);
           html.style.setProperty('--archify-rail-width', RAIL_WIDTH + 'px');

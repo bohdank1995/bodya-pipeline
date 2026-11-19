@@ -212,42 +212,5 @@
       "variant": "dashed",
       "role": "return"
     }
-  ],
-  "cards": [
-    {
-      "dot": "cyan",
-      "title": "Choose the approach",
-      "items": [
-        "1. Validated outcome: the result of layer 1. Example: owners really want to save time, with evidence.",
-        "2. Explore ways to achieve it: list the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors.",
-        "3. Pick one way: choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply."
-      ]
-    },
-    {
-      "dot": "violet",
-      "title": "Plan the test",
-      "items": [
-        "4. Hypotheses + bar: if we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules.",
-        "5. Choose how to validate: pick the cheapest honest test, such as a mockup, a manual version or a small build.",
-        "6. Minimal requirements: write the smallest version that still tests the hypothesis."
-      ]
-    },
-    {
-      "dot": "emerald",
-      "title": "Build + learn",
-      "items": [
-        "7. Build: make that version quickly, with AI where it helps.",
-        "8. Validate: put it in front of real users or real data. Collect insights and evidence.",
-        "9. Document + decide: compare the result with the bar, write down what you learned, then keep, narrow, change or stop."
-      ]
-    },
-    {
-      "dot": "amber",
-      "title": "Share + repeat",
-      "items": [
-        "10. Share: turn the lap into an X post and a portfolio case, including when it failed.",
-        "11. Next lap or layer: repeat with the updated list, or go deeper to the next layer: value and price."
-      ]
-    }
   ]
 }

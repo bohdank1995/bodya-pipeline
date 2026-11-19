@@ -185,26 +185,6 @@
       "role": "return"
     }
   ],
-  "cards": [
-    {
-      "dot": "cyan",
-      "title": "Rules for every lap",
-      "items": [
-        "One hypothesis per lap",
-        "Set the success bar before testing",
-        "Every lap ends in a written decision"
-      ]
-    },
-    {
-      "dot": "amber",
-      "title": "Delivery CRM pilot (assumed)",
-      "items": [
-        "Audience: owners of carpet and furniture cleaning businesses",
-        "First outcome to test: lose less money",
-        "Nothing here is validated yet"
-      ]
-    }
-  ],
   "groups": [
     {
       "id": "g-start",

@@ -2638,6 +2638,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     /* Summary rail: the reader measures the viewport and enables it only when the
        diagram keeps its readable width beside the notes. */
     .reader-rail { display: contents; }
+    /* Inside another page (an iframe), show only the diagram: no notes, no index. */
+    html[data-archify-embedded="true"] .reader-rail,
+    html[data-archify-embedded="true"] .rail-reveal { display: none !important; }
     html[data-reader-rail="true"] .container {
       display: grid;
       grid-template-columns: minmax(0, 1fr) var(--archify-rail-width);
@@ -5608,29 +5611,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </div>
     <!-- Info Cards -->
     <div class="cards">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot cyan"></div>
-          <h3>Rules for every lap</h3>
-        </div>
-        <ul>
-          <li>One hypothesis per lap</li>
-          <li>Set the success bar before testing</li>
-          <li>Every lap ends in a written decision</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot amber"></div>
-          <h3>Delivery CRM pilot (assumed)</h3>
-        </div>
-        <ul>
-          <li>Audience: owners of carpet and furniture cleaning businesses</li>
-          <li>First outcome to test: lose less money</li>
-          <li>Nothing here is validated yet</li>
-        </ul>
-      </div>
     </div>
     <nav class="node-outline no-print" id="node-outline" hidden aria-labelledby="node-outline-title">
       <div class="node-outline-head">
@@ -10487,7 +10468,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       // Rail modes: "true" docks beside the diagram, "collapsed" leaves only the
       // reveal control, "overlay" opens a drawer when docking would break the
       // readable floor, and "bottom" stacks notes and index below the diagram.
+      var archifyEmbedded = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
+      if (archifyEmbedded) document.documentElement.setAttribute('data-archify-embedded', 'true');
       function setRail(mode) {
+        if (archifyEmbedded) mode = null;
         if (mode) {
           html.setAttribute('data-reader-rail', mode);
           html.style.setProperty('--archify-rail-width', RAIL_WIDTH + 'px');
