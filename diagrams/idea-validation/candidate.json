@@ -1,0 +1,62 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Idea Validation: Vision + Audience → Hypothesis",
+    "subtitle": "First part of the pipeline, abstract. Pilot: Delivery CRM",
+    "output": "diagrams/idea-validation/idea-validation.html",
+    "quality_profile": "showcase",
+    "legend": { "mode": "hidden" }
+  },
+  "lanes": [
+    { "id": "inputs", "label": "Project notes" },
+    { "id": "draft", "label": "Draft" },
+    { "id": "check", "label": "Check" }
+  ],
+  "phases": [
+    { "id": "ph-inputs", "label": "Inputs", "fromCol": 0, "toCol": 1 },
+    { "id": "ph-draft", "label": "Write the bet", "fromCol": 2, "toCol": 4, "variant": "emphasis" },
+    { "id": "ph-ready", "label": "Next", "fromCol": 5, "toCol": 5 }
+  ],
+  "mainPath": ["vision", "audience", "problem", "hypothesis", "bar", "gate", "ready"],
+  "nodes": [
+    { "id": "vision", "lane": "inputs", "col": 0, "type": "frontend", "icon": "flag", "label": "Vision", "sublabel": "outcome for the owner" },
+    { "id": "audience", "lane": "inputs", "col": 1, "type": "external", "icon": "person", "label": "Target audience", "sublabel": "who, which segment" },
+    { "id": "problem", "lane": "draft", "col": 2, "type": "backend", "label": "Problem", "sublabel": "what blocks them" },
+    { "id": "hypothesis", "lane": "draft", "col": 3, "type": "backend", "label": "Hypothesis", "sublabel": "who, what, how often" },
+    { "id": "bar", "lane": "draft", "col": 4, "type": "messagebus", "label": "Success bar", "sublabel": "number + deadline" },
+    { "id": "gate", "lane": "check", "col": 4, "type": "security", "icon": "decision", "label": "Testable?", "sublabel": "can it be wrong?" },
+    { "id": "rewrite", "lane": "check", "col": 3, "type": "external", "icon": "failure", "label": "Rewrite", "sublabel": "narrow or sharpen" },
+    { "id": "ready", "lane": "check", "col": 5, "type": "backend", "icon": "success", "label": "Ready to validate", "sublabel": "next: evidence" }
+  ],
+  "edges": [
+    { "id": "e-vision-audience", "from": "vision", "to": "audience", "label": "for whom" },
+    { "id": "e-audience-problem", "from": "audience", "to": "problem", "label": "their needs", "variant": "emphasis" },
+    { "id": "e-problem-hypothesis", "from": "problem", "to": "hypothesis", "label": "pick one" },
+    { "id": "e-hypothesis-bar", "from": "hypothesis", "to": "bar", "label": "set first", "variant": "emphasis" },
+    { "id": "e-bar-gate", "from": "bar", "to": "gate" },
+    { "id": "e-gate-ready", "from": "gate", "to": "ready", "label": "yes", "variant": "emphasis" },
+    { "id": "e-gate-rewrite", "from": "gate", "to": "rewrite", "label": "no", "variant": "security", "role": "error" },
+    { "id": "e-rewrite-hypothesis", "from": "rewrite", "to": "hypothesis", "label": "retry", "variant": "dashed", "role": "return" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Testable means",
+      "items": [
+        "Names who has the problem, what it is and how often",
+        "Names today's workaround",
+        "Has a number and a deadline, set before testing"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Delivery CRM pilot (assumed)",
+      "items": [
+        "Audience: owners of carpet and furniture cleaning businesses in Ukraine",
+        "Problem to test: paying for damage that was already there",
+        "Not validated yet: this is a bet, not a fact"
+      ]
+    }
+  ]
+}
