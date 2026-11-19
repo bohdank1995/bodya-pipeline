@@ -1,0 +1,8 @@
+.DS_Store
+.archify/
+*.finalize.json
+*.finalize-summary.json
+*.browser-check.json
+*.delivery.json
+review-*/
+visual-check/

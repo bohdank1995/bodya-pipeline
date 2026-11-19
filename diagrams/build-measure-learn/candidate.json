@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Build → Measure → Learn",
+    "subtitle": "Lean Startup experiment loop (Eric Ries), abstract",
+    "output": "diagrams/build-measure-learn/build-measure-learn.html",
+    "quality_profile": "showcase",
+    "legend": { "mode": "hidden" }
+  },
+  "lanes": [
+    { "id": "loop", "label": "Experiment loop" },
+    { "id": "keep", "label": "Hypothesis held" },
+    { "id": "change", "label": "Hypothesis failed", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "ph-idea", "label": "Idea", "fromCol": 0, "toCol": 0 },
+    { "id": "ph-build", "label": "Build", "fromCol": 1, "toCol": 2, "variant": "emphasis" },
+    { "id": "ph-measure", "label": "Measure", "fromCol": 3, "toCol": 4 },
+    { "id": "ph-learn", "label": "Learn", "fromCol": 5, "toCol": 5, "variant": "emphasis" }
+  ],
+  "mainPath": ["idea", "build", "mvp", "measure", "data", "learn", "decide"],
+  "nodes": [
+    { "id": "idea", "lane": "loop", "col": 0, "type": "frontend", "icon": "start", "label": "Hypothesis", "sublabel": "what we believe" },
+    { "id": "build", "lane": "loop", "col": 1, "type": "backend", "label": "Build", "sublabel": "smallest test" },
+    { "id": "mvp", "lane": "loop", "col": 2, "type": "cloud", "label": "MVP", "sublabel": "shipped to users" },
+    { "id": "measure", "lane": "loop", "col": 3, "type": "messagebus", "label": "Measure", "sublabel": "one key metric" },
+    { "id": "data", "lane": "loop", "col": 4, "type": "database", "label": "Data", "sublabel": "vs success bar" },
+    { "id": "learn", "lane": "loop", "col": 5, "type": "security", "icon": "decision", "label": "Learn", "sublabel": "what it means" },
+    { "id": "decide", "lane": "keep", "col": 5, "type": "security", "icon": "decision", "label": "Decide", "sublabel": "bar met?" },
+    { "id": "persevere", "lane": "keep", "col": 1, "type": "backend", "icon": "success", "label": "Persevere", "sublabel": "improve & scale" },
+    { "id": "pivot", "lane": "change", "col": 0, "type": "external", "icon": "flag", "label": "Pivot", "sublabel": "new hypothesis" }
+  ],
+  "edges": [
+    { "id": "e-idea-build", "from": "idea", "to": "build", "label": "test it" },
+    { "id": "e-build-mvp", "from": "build", "to": "mvp", "variant": "emphasis" },
+    { "id": "e-mvp-measure", "from": "mvp", "to": "measure", "label": "usage" },
+    { "id": "e-measure-data", "from": "measure", "to": "data" },
+    { "id": "e-data-learn", "from": "data", "to": "learn", "variant": "emphasis" },
+    { "id": "e-learn-decide", "from": "learn", "to": "decide" },
+    { "id": "e-decide-persevere", "from": "decide", "to": "persevere", "label": "yes: validated", "role": "branch" },
+    { "id": "e-persevere-build", "from": "persevere", "to": "build", "label": "next lap", "role": "return", "variant": "dashed" },
+    { "id": "e-decide-pivot", "from": "decide", "to": "pivot", "label": "no: invalidated", "role": "error", "variant": "security" },
+    { "id": "e-pivot-idea", "from": "pivot", "to": "idea", "label": "restart", "role": "return", "variant": "dashed" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Before the lap",
+      "items": [
+        "Write the hypothesis and one success bar",
+        "Build only what tests that hypothesis"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "After the lap",
+      "items": [
+        "Compare data to the bar, not to hopes",
+        "Every lap ends in a decision"
+      ]
+    }
+  ]
+}
