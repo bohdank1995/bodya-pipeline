@@ -7,7 +7,27 @@
     "output": "diagrams/solution-validation/solution-validation.html",
     "quality_profile": "showcase",
     "legend": {
-      "mode": "hidden"
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "visible": false
+        },
+        "backend": {
+          "visible": false
+        },
+        "cloud": {
+          "visible": false
+        },
+        "security": {
+          "label": "You decide"
+        },
+        "messagebus": {
+          "visible": false
+        },
+        "external": {
+          "visible": false
+        }
+      }
     }
   },
   "lanes": [
@@ -65,39 +85,43 @@
       "id": "pick",
       "lane": "plan",
       "col": 2,
-      "type": "frontend",
+      "type": "security",
       "label": "Pick one way",
       "sublabel": "most evidence, cheapest test",
       "width": 158,
-      "description": "Choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply."
+      "description": "Choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply.",
+      "icon": "decision"
     },
     {
       "id": "hypothesis",
       "lane": "plan",
       "col": 3,
-      "type": "backend",
+      "type": "security",
       "label": "Hypotheses + bar",
       "sublabel": "number set before building",
       "width": 158,
-      "description": "If we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules."
+      "description": "If we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules.",
+      "icon": "decision"
     },
     {
       "id": "how",
       "lane": "plan",
       "col": 4,
-      "type": "backend",
+      "type": "security",
       "label": "Choose how to validate",
       "sublabel": "cheapest honest test",
-      "width": 158
+      "width": 158,
+      "icon": "decision"
     },
     {
       "id": "requirements",
       "lane": "plan",
       "col": 5,
-      "type": "backend",
+      "type": "security",
       "label": "Minimal requirements",
       "sublabel": "smallest version",
-      "width": 158
+      "width": 158,
+      "icon": "decision"
     },
     {
       "id": "build",
@@ -121,10 +145,11 @@
       "id": "document",
       "lane": "test",
       "col": 3,
-      "type": "database",
+      "type": "security",
       "label": "Document + decide",
       "sublabel": "keep, narrow, change, stop",
-      "width": 158
+      "width": 158,
+      "icon": "decision"
     },
     {
       "id": "share",

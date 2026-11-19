@@ -3,11 +3,28 @@
   "diagram_type": "workflow",
   "meta": {
     "title": "Validation Pipeline",
-    "subtitle": "Vision + Target audience → Desired outcomes → Validation. Abstract, pilot: Delivery CRM",
+    "subtitle": "Validates the high-level problems behind the vision and target audience, to prove that the direction is relevant and that people are willing to pay for it.",
     "output": "diagrams/idea-validation/idea-validation.html",
     "quality_profile": "showcase",
     "legend": {
-      "mode": "hidden"
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "visible": false
+        },
+        "database": {
+          "visible": false
+        },
+        "security": {
+          "label": "You decide"
+        },
+        "messagebus": {
+          "visible": false
+        },
+        "external": {
+          "visible": false
+        }
+      }
     }
   },
   "lanes": [
@@ -21,7 +38,7 @@
     },
     {
       "id": "result",
-      "label": "Decision"
+      "label": "After validating"
     }
   ],
   "mainPath": [
@@ -70,31 +87,34 @@
       "id": "choose",
       "lane": "validation",
       "col": 2,
-      "type": "backend",
+      "type": "security",
       "label": "Choose what to validate",
       "sublabel": "one outcome or claim",
       "width": 158,
-      "tag": "step 1"
+      "tag": "step 1",
+      "icon": "decision"
     },
     {
       "id": "formulate",
       "lane": "validation",
       "col": 3,
-      "type": "backend",
+      "type": "security",
       "label": "Hypotheses + bar",
       "sublabel": "number set before testing",
       "width": 158,
-      "tag": "step 2"
+      "tag": "step 2",
+      "icon": "decision"
     },
     {
       "id": "how",
       "lane": "validation",
       "col": 4,
-      "type": "backend",
+      "type": "security",
       "label": "Choose how to validate",
       "sublabel": "cheapest honest test",
       "width": 158,
-      "tag": "step 3"
+      "tag": "step 3",
+      "icon": "decision"
     },
     {
       "id": "validate",
@@ -102,29 +122,55 @@
       "col": 5,
       "type": "messagebus",
       "label": "Validate",
-      "sublabel": "collect insights, evidence",
+      "sublabel": "profile, then calls",
       "width": 158,
-      "tag": "step 4"
+      "tag": "step 4",
+      "description": "Starts with the validation profile: who, how many, which methods and what counts. Then you talk to the people in the profile."
     },
     {
-      "id": "document",
+      "id": "evidence",
       "lane": "result",
       "col": 5,
       "type": "database",
-      "label": "Document result",
-      "sublabel": "learning card + decision",
+      "label": "Evidence log",
+      "sublabel": "one row per evidence",
+      "tag": "step 4",
       "width": 158,
-      "tag": "step 5"
+      "description": "While validating, write down what each person said or showed: one row per piece of evidence, with exact words, the hypothesis, for or against, and whether it was unprompted."
     },
     {
-      "id": "decide",
+      "id": "result",
       "lane": "result",
       "col": 4,
       "type": "security",
       "icon": "decision",
-      "label": "Decision",
-      "sublabel": "keep, narrow, change",
-      "width": 158
+      "label": "Result + decision",
+      "sublabel": "count, verdict, decide",
+      "tag": "step 5",
+      "width": 158,
+      "description": "Count the people for and against each hypothesis, compare with its success bar, apply the verdict rule, then decide: keep, narrow, change or stop."
+    },
+    {
+      "id": "gate",
+      "lane": "result",
+      "col": 3,
+      "type": "security",
+      "icon": "decision",
+      "label": "Gate",
+      "sublabel": "all checks pass?",
+      "width": 158,
+      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap."
+    },
+    {
+      "id": "validated",
+      "lane": "result",
+      "col": 2,
+      "type": "external",
+      "icon": "flag",
+      "label": "Validated outcome",
+      "sublabel": "start of layer 2",
+      "width": 158,
+      "description": "Written only when the gate passes: the outcome, its strongest evidence, the strongest evidence against, and what is still unknown. Solution validation starts from here."
     }
   ],
   "edges": [
@@ -164,21 +210,35 @@
       "variant": "emphasis"
     },
     {
-      "id": "e-validate-document",
+      "id": "e-validate-evidence",
       "from": "validate",
-      "to": "document",
+      "to": "evidence",
       "role": "branch"
     },
     {
-      "id": "e-document-decide",
-      "from": "document",
-      "to": "decide",
-      "variant": "emphasis",
+      "id": "e-evidence-result",
+      "from": "evidence",
+      "to": "result",
       "role": "branch"
     },
     {
-      "id": "e-decide-choose",
-      "from": "decide",
+      "id": "e-result-gate",
+      "from": "result",
+      "to": "gate",
+      "role": "branch",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-gate-validated",
+      "from": "gate",
+      "to": "validated",
+      "label": "pass",
+      "role": "branch",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-gate-choose",
+      "from": "gate",
       "to": "choose",
       "label": "next lap",
       "variant": "dashed",
