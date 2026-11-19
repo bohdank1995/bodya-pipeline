@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.2.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>Idea Validation: Vision + Audience → Hypothesis Diagram</title>
+  <title>Validation Pipeline Diagram</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -1833,6 +1833,23 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       white-space: nowrap;
     }
     .semantic-passport-detail[hidden] { display: none; }
+    .semantic-passport-description {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--text);
+      font-size: 0.75rem;
+      line-height: 1.5;
+      white-space: normal;
+    }
+    .semantic-passport-description[hidden] { display: none; }
+    /* A node with an authored description shows only title, subtitle and description. */
+    .focus-chip.has-description .semantic-passport-meta,
+    .focus-chip.has-description .semantic-passport-evidence,
+    .focus-chip.has-description .relationship-lens-summary,
+    .focus-chip.has-description .semantic-passport-reach,
+    .focus-chip.has-description .relationship-lens-list,
+    .focus-chip.has-description #btn-focus-copy,
+    .focus-chip.has-description #btn-focus-relations { display: none !important; }
     .semantic-passport-meta {
       display: flex;
       flex-wrap: wrap;
@@ -5194,9 +5211,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BLUEPRINT / REV 01"
            data-preset-badge-editorial="EDITORIAL / FIELD NOTE">
         <div class="pulse-dot"></div>
-        <h1>Idea Validation: Vision + Audience → Hypothesis</h1>
+        <h1>Validation Pipeline</h1>
       </div>
-      <p class="subtitle">First part of the pipeline, abstract. Pilot: Delivery CRM</p>
+      <p class="subtitle">Vision + Target audience → Desired outcomes → Validation. Abstract, pilot: Delivery CRM</p>
     </div>
 
 
@@ -5204,9 +5221,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 886 528" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
-        <title id="archify-diagram-title">Idea Validation: Vision + Audience → Hypothesis</title>
-        <desc id="archify-diagram-description">First part of the pipeline, abstract. Pilot: Delivery CRM</desc>
+      <svg viewBox="0 0 1234 534" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
+        <title id="archify-diagram-title">Validation Pipeline</title>
+        <desc id="archify-diagram-description">Vision + Target audience → Desired outcomes → Validation. Abstract, pilot: Delivery CRM</desc>
         <!-- Definitions -->
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -5251,162 +5268,164 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="830" height="104" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / Project notes</text>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / Foundation</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="830" height="104" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="54" y="198" class="t-muted" font-size="10" font-weight="600">02 / Draft</text>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="178" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="200" class="t-muted" font-size="10" font-weight="600">02 / Validation</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="830" height="104" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="54" y="322" class="t-muted" font-size="10" font-weight="600">03 / Check</text>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="304" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="326" class="t-muted" font-size="10" font-weight="600">03 / Decision</text>
 
         <!-- Phase headers -->
-        <path d="M 56 35 H 282.4" class="a-default phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <rect x="144.79999999999998" y="27" width="48.8" height="16" rx="8" class="c-mask phase-chip"/>
-        <text x="169.2" y="38.5" class="t-muted" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">Inputs</text>
-        <path d="M 326.40000000000003 35 H 704" class="a-emphasis phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <rect x="474.00000000000006" y="27" width="82.4" height="16" rx="8" class="c-mask phase-chip"/>
-        <text x="515.2" y="38.5" class="t-backend" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">Write the bet</text>
-        <path d="M 768 35 H 844" class="a-default phase-rule" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <rect x="786" y="27" width="40" height="16" rx="8" class="c-mask phase-chip"/>
-        <text x="806" y="38.5" class="t-muted" font-size="8" font-weight="600" text-anchor="middle" letter-spacing=".04em">Next</text>
+
 
         <!-- Workflow groups -->
-
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="group" data-composition-frame-id="group-0" x="44" y="90" width="380.4" height="64" rx="9" class="c-lane" stroke-width="1"/>
+        <text x="54" y="88" class="t-backend" font-size="7" font-weight="600">Starting assumptions</text>
 
         <!-- Edge paths -->
-        <path data-edge-from="audience" data-edge-to="problem" data-edge-label="their needs" data-edge-key="0" data-edge-id="e-audience-problem" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="292.4,119;364.4,119;364.4,217" d="M 292.4 119 L 356.4 119 Q 364.4 119 364.4 127 L 364.4 217" class="a-emphasis" data-animate="edge" style="--step:1" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="bar" data-edge-to="gate" data-edge-key="1" data-edge-id="e-bar-gate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="666,269;666,341" d="M 666 269 L 666 341" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="gate" data-edge-to="ready" data-edge-label="yes" data-edge-key="2" data-edge-id="e-gate-ready" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="712,367;750,367" d="M 712 367 L 750 367" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="gate" data-edge-to="rewrite" data-edge-label="no" data-edge-key="3" data-edge-id="e-gate-rewrite" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="620,367;558.8,367" d="M 620 367 L 558.8 367" class="a-security" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead-security)"/>
-        <path data-edge-from="hypothesis" data-edge-to="bar" data-edge-label="set first" data-edge-key="4" data-edge-id="e-hypothesis-bar" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="558.8,243;620,243" d="M 558.8 243 L 620 243" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="problem" data-edge-to="hypothesis" data-edge-label="pick one" data-edge-key="5" data-edge-id="e-problem-hypothesis" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="410.4,243;466.79999999999995,243" d="M 410.4 243 L 466.79999999999995 243" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="rewrite" data-edge-to="hypothesis" data-edge-label="retry" data-edge-key="6" data-edge-id="e-rewrite-hypothesis" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="512.8,341;512.8,269" d="M 512.8 341 L 512.8 269" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="vision" data-edge-to="audience" data-edge-label="for whom" data-edge-key="7" data-edge-id="e-vision-audience" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="140,119;196.4,119" d="M 140 119 L 196.4 119" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="audience" data-edge-to="outcomes" data-edge-label="turn into" data-edge-key="0" data-edge-id="e-audience-outcomes" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="420.4,120;481.5999999999999,120" d="M 420.4 120 L 481.5999999999999 120" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="choose" data-edge-to="formulate" data-edge-key="1" data-edge-id="e-choose-formulate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="639.5999999999999,246;671.5999999999999,246" d="M 639.5999999999999 246 L 671.5999999999999 246" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="decide" data-edge-to="choose" data-edge-label="next lap" data-edge-key="2" data-edge-id="e-decide-choose" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="861.5999999999999,372;560.5999999999999,372;560.5999999999999,280" d="M 861.5999999999999 372 L 568.5999999999999 372 Q 560.5999999999999 372 560.5999999999999 364 L 560.5999999999999 280" class="a-dashed" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="document" data-edge-to="decide" data-edge-key="3" data-edge-id="e-document-decide" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1051.6,372;1019.5999999999999,372" d="M 1051.6 372 L 1019.5999999999999 372" class="a-emphasis" data-animate="edge" style="--step:10" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="formulate" data-edge-to="how" data-edge-key="4" data-edge-id="e-formulate-how" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="829.5999999999999,246;861.5999999999999,246" d="M 829.5999999999999 246 L 861.5999999999999 246" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="how" data-edge-to="validate" data-edge-key="5" data-edge-id="e-how-validate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="1019.5999999999999,246;1051.6,246" d="M 1019.5999999999999 246 L 1051.6 246" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="outcomes" data-edge-to="choose" data-edge-label="pick one" data-edge-key="6" data-edge-id="e-outcomes-choose" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="560.5999999999999,146;560.5999999999999,212" d="M 560.5999999999999 146 L 560.5999999999999 212" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="validate" data-edge-to="document" data-edge-key="7" data-edge-id="e-validate-document" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1130.6,280;1130.6,338" d="M 1130.6 280 L 1130.6 338" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="vision" data-edge-to="audience" data-edge-label="for whom" data-edge-key="8" data-edge-id="e-vision-audience" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="206,120;262.4,120" d="M 206 120 L 262.4 120" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
 
         <!-- Nodes -->
-        <g id="node-vision" data-node-id="vision" data-node-label="Vision" tabindex="0" role="button" aria-label="Focus Vision, outcome for the owner, Project notes › Inputs" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="outcome for the owner" data-node-context="Project notes › Inputs">
-          <title>Vision · outcome for the owner · Project notes › Inputs</title>
-          <rect x="48" y="93" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="48" y="93" width="92" height="52" rx="8" class="c-frontend" data-animate="node" style="--step:0" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="flag" class="semantic-sigil s-frontend" transform="translate(54 99) scale(0.6875)">
+        <g id="node-vision" data-node-id="vision" data-node-label="Vision" tabindex="0" role="button" aria-label="Focus Vision, where we want to get to, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="where we want to get to" data-node-description="The change you want to create, in one or two sentences. It is a direction you choose, not a proven fact, so it stays a starting assumption until evidence supports it." data-node-context="Foundation › Starting assumptions">
+          <title>Vision · where we want to get to · Foundation › Starting assumptions</title>
+          <rect x="48" y="94" width="158" height="52" rx="8" class="c-mask"/>
+          <rect x="48" y="94" width="158" height="52" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="flag" class="semantic-sigil s-external" transform="translate(54 100) scale(0.6875)">
             <path d="M3 14V2h10l-2 3 2 3H3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="94" y="114" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Vision</text>
-          <text data-detail="context" x="94" y="131" class="t-muted" font-size="6.6" text-anchor="middle">outcome for the owner</text>
+          <text data-node-label="" data-detail-anchor="" x="127" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Vision</text>
+          <text data-detail="context" x="127" y="132" class="t-muted" font-size="8" text-anchor="middle">where we want to get to</text>
         </g>
 
-        <g id="node-audience" data-node-id="audience" data-node-label="Target audience" tabindex="0" role="button" aria-label="Focus Target audience, who, which segment, Project notes › Inputs" aria-pressed="false" data-node-kind="external" data-node-sublabel="who, which segment" data-node-context="Project notes › Inputs">
-          <title>Target audience · who, which segment · Project notes › Inputs</title>
-          <rect x="196.4" y="93" width="96" height="52" rx="8" class="c-mask"/>
-          <rect x="196.4" y="93" width="96" height="52" rx="8" class="c-external" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="person" class="semantic-sigil s-external" transform="translate(202.4 99) scale(0.6875)">
+        <g id="node-audience" data-node-id="audience" data-node-label="Target audience" tabindex="0" role="button" aria-label="Focus Target audience, who we build it for, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="who we build it for" data-node-description="The specific group of people the vision is for: who they are, which segment first, and who qualifies. A starting assumption that the evidence will keep, narrow or change." data-node-context="Foundation › Starting assumptions">
+          <title>Target audience · who we build it for · Foundation › Starting assumptions</title>
+          <rect x="262.4" y="94" width="158" height="52" rx="8" class="c-mask"/>
+          <rect x="262.4" y="94" width="158" height="52" rx="8" class="c-external" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="person" class="semantic-sigil s-external" transform="translate(268.4 100) scale(0.6875)">
             <circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="244.4" y="123.7" class="t-primary" font-size="9.7" font-weight="600" text-anchor="middle">Target audience</text>
-          <text data-detail="context" x="244.4" y="138.3" class="t-muted" font-size="8" text-anchor="middle">who, which segment</text>
+          <text data-node-label="" data-detail-anchor="" x="341.4" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Target audience</text>
+          <text data-detail="context" x="341.4" y="132" class="t-muted" font-size="8" text-anchor="middle">who we build it for</text>
         </g>
 
-        <g id="node-problem" data-node-id="problem" data-node-label="Problem" tabindex="0" role="button" aria-label="Focus Problem, what blocks them, Draft › Write the bet" aria-pressed="false" data-node-kind="backend" data-node-sublabel="what blocks them" data-node-context="Draft › Write the bet">
-          <title>Problem · what blocks them · Draft › Write the bet</title>
-          <rect x="318.4" y="217" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="318.4" y="217" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(324.4 223) scale(0.6875)">
+        <g id="node-outcomes" data-node-id="outcomes" data-node-label="Desired outcomes" tabindex="0" role="button" aria-label="Focus Desired outcomes, what they want, Foundation" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="what they want" data-node-context="Foundation">
+          <title>Desired outcomes · what they want · Foundation</title>
+          <rect x="481.5999999999999" y="94" width="158" height="52" rx="8" class="c-mask"/>
+          <rect x="481.5999999999999" y="94" width="158" height="52" rx="8" class="c-frontend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="start" class="semantic-sigil s-frontend" transform="translate(487.5999999999999 100) scale(0.6875)">
+            <circle cx="8" cy="8" r="5"/>
+            <path d="m7 5.4 3.6 2.6L7 10.6Z" class="sigil-fill"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="560.5999999999999" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Desired outcomes</text>
+          <text data-detail="context" x="560.5999999999999" y="132" class="t-muted" font-size="8" text-anchor="middle">what they want</text>
+        </g>
+
+        <g id="node-choose" data-node-id="choose" data-node-label="Choose what to validate" tabindex="0" role="button" aria-label="Focus Choose what to validate, one outcome or claim, Validation" aria-pressed="false" data-node-kind="backend" data-node-sublabel="one outcome or claim" data-node-tag="step 1" data-node-context="Validation">
+          <title>Choose what to validate · one outcome or claim · Validation · step 1</title>
+          <rect x="481.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="481.5999999999999" y="212" width="158" height="68" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(487.5999999999999 218) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="364.4" y="238" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Problem</text>
-          <text data-detail="context" x="364.4" y="255" class="t-muted" font-size="8" text-anchor="middle">what blocks them</text>
+          <text data-node-label="" data-detail-anchor="" x="560.5999999999999" y="244" class="t-primary" font-size="10.8" font-weight="600" text-anchor="middle">Choose what to validate</text>
+          <text data-detail="context" x="560.5999999999999" y="258.9" class="t-muted" font-size="8" text-anchor="middle">one outcome or claim</text>
+        <text data-detail="fine" x="560.5999999999999" y="271.7" class="t-backend" font-size="7" text-anchor="middle">step 1</text>
         </g>
 
-        <g id="node-hypothesis" data-node-id="hypothesis" data-node-label="Hypothesis" tabindex="0" role="button" aria-label="Focus Hypothesis, who, what, how often, Draft › Write the bet" aria-pressed="false" data-node-kind="backend" data-node-sublabel="who, what, how often" data-node-context="Draft › Write the bet">
-          <title>Hypothesis · who, what, how often · Draft › Write the bet</title>
-          <rect x="466.79999999999995" y="217" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="466.79999999999995" y="217" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(472.79999999999995 223) scale(0.6875)">
+        <g id="node-formulate" data-node-id="formulate" data-node-label="Hypotheses + bar" tabindex="0" role="button" aria-label="Focus Hypotheses + bar, number set before testing, Validation" aria-pressed="false" data-node-kind="backend" data-node-sublabel="number set before testing" data-node-tag="step 2" data-node-context="Validation">
+          <title>Hypotheses + bar · number set before testing · Validation · step 2</title>
+          <rect x="671.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="671.5999999999999" y="212" width="158" height="68" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(677.5999999999999 218) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="518.8" y="238" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Hypothesis</text>
-          <text data-detail="context" x="512.8" y="255" class="t-muted" font-size="7" text-anchor="middle">who, what, how often</text>
+          <text data-node-label="" data-detail-anchor="" x="750.5999999999999" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Hypotheses + bar</text>
+          <text data-detail="context" x="750.5999999999999" y="250" class="t-muted" font-size="8" text-anchor="middle">number set before testing</text>
+        <text data-detail="fine" x="750.5999999999999" y="268" class="t-backend" font-size="7" text-anchor="middle">step 2</text>
         </g>
 
-        <g id="node-bar" data-node-id="bar" data-node-label="Success bar" tabindex="0" role="button" aria-label="Focus Success bar, number + deadline, Draft › Write the bet" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="number + deadline" data-node-context="Draft › Write the bet">
-          <title>Success bar · number + deadline · Draft › Write the bet</title>
-          <rect x="620" y="217" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="620" y="217" width="92" height="52" rx="8" class="c-messagebus" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(626 223) scale(0.6875)">
+        <g id="node-how" data-node-id="how" data-node-label="Choose how to validate" tabindex="0" role="button" aria-label="Focus Choose how to validate, cheapest honest test, Validation" aria-pressed="false" data-node-kind="backend" data-node-sublabel="cheapest honest test" data-node-tag="step 3" data-node-context="Validation">
+          <title>Choose how to validate · cheapest honest test · Validation · step 3</title>
+          <rect x="861.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="861.5999999999999" y="212" width="158" height="68" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(867.5999999999999 218) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="940.5999999999999" y="244.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Choose how to validate</text>
+          <text data-detail="context" x="940.5999999999999" y="259.1" class="t-muted" font-size="8" text-anchor="middle">cheapest honest test</text>
+        <text data-detail="fine" x="940.5999999999999" y="271.9" class="t-backend" font-size="7" text-anchor="middle">step 3</text>
+        </g>
+
+        <g id="node-validate" data-node-id="validate" data-node-label="Validate" tabindex="0" role="button" aria-label="Focus Validate, collect insights, evidence, Validation" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="collect insights, evidence" data-node-tag="step 4" data-node-context="Validation">
+          <title>Validate · collect insights, evidence · Validation · step 4</title>
+          <rect x="1051.6" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="1051.6" y="212" width="158" height="68" rx="8" class="c-messagebus" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(1057.6 218) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
             <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="666" y="249.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Success bar</text>
-          <text data-detail="context" x="666" y="264.1" class="t-muted" font-size="8" text-anchor="middle">number + deadline</text>
+          <text data-node-label="" data-detail-anchor="" x="1130.6" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Validate</text>
+          <text data-detail="context" x="1130.6" y="250" class="t-muted" font-size="8" text-anchor="middle">collect insights, evidence</text>
+        <text data-detail="fine" x="1130.6" y="268" class="t-messagebus" font-size="7" text-anchor="middle">step 4</text>
         </g>
 
-        <g id="node-rewrite" data-node-id="rewrite" data-node-label="Rewrite" tabindex="0" role="button" aria-label="Focus Rewrite, narrow or sharpen, Check › Write the bet" aria-pressed="false" data-node-kind="external" data-node-sublabel="narrow or sharpen" data-node-context="Check › Write the bet">
-          <title>Rewrite · narrow or sharpen · Check › Write the bet</title>
-          <rect x="466.79999999999995" y="341" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="466.79999999999995" y="341" width="92" height="52" rx="8" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="failure" class="semantic-sigil s-external" transform="translate(472.79999999999995 347) scale(0.6875)">
-            <circle cx="8" cy="8" r="5.3"/>
-            <path d="m5.7 5.7 4.6 4.6m0-4.6-4.6 4.6"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="512.8" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Rewrite</text>
-          <text data-detail="context" x="512.8" y="379" class="t-muted" font-size="8" text-anchor="middle">narrow or sharpen</text>
-        </g>
-
-        <g id="node-gate" data-node-id="gate" data-node-label="Testable?" tabindex="0" role="button" aria-label="Focus Testable?, can it be wrong?, Check › Write the bet" aria-pressed="false" data-node-kind="security" data-node-sublabel="can it be wrong?" data-node-context="Check › Write the bet">
-          <title>Testable? · can it be wrong? · Check › Write the bet</title>
-          <rect x="620" y="341" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="620" y="341" width="92" height="52" rx="8" class="c-security" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(626 347) scale(0.6875)">
+        <g id="node-decide" data-node-id="decide" data-node-label="Decision" tabindex="0" role="button" aria-label="Focus Decision, keep, narrow, change, Decision" aria-pressed="false" data-node-kind="security" data-node-sublabel="keep, narrow, change" data-node-context="Decision">
+          <title>Decision · keep, narrow, change · Decision</title>
+          <rect x="861.5999999999999" y="346" width="158" height="52" rx="8" class="c-mask"/>
+          <rect x="861.5999999999999" y="346" width="158" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(867.5999999999999 352) scale(0.6875)">
             <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="668.7" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Testable?</text>
-          <text data-detail="context" x="666" y="379" class="t-muted" font-size="8" text-anchor="middle">can it be wrong?</text>
+          <text data-node-label="" data-detail-anchor="" x="940.5999999999999" y="367" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Decision</text>
+          <text data-detail="context" x="940.5999999999999" y="384" class="t-muted" font-size="8" text-anchor="middle">keep, narrow, change</text>
         </g>
 
-        <g id="node-ready" data-node-id="ready" data-node-label="Ready to validate" tabindex="0" role="button" aria-label="Focus Ready to validate, next: evidence, Check › Next" aria-pressed="false" data-node-kind="backend" data-node-sublabel="next: evidence" data-node-context="Check › Next">
-          <title>Ready to validate · next: evidence · Check › Next</title>
-          <rect x="750" y="341" width="112" height="52" rx="8" class="c-mask"/>
-          <rect x="750" y="341" width="112" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="success" class="semantic-sigil s-backend" transform="translate(756 347) scale(0.6875)">
-            <circle cx="8" cy="8" r="5.3"/>
-            <path d="m5.2 8 1.8 1.8 3.8-4"/>
+        <g id="node-document" data-node-id="document" data-node-label="Document result" tabindex="0" role="button" aria-label="Focus Document result, learning card + decision, Decision" aria-pressed="false" data-node-kind="database" data-node-sublabel="learning card + decision" data-node-tag="step 5" data-node-context="Decision">
+          <title>Document result · learning card + decision · Decision · step 5</title>
+          <rect x="1051.6" y="338" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="1051.6" y="338" width="158" height="68" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1057.6 344) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="806" y="372.2" class="t-primary" font-size="10.1" font-weight="600" text-anchor="middle">Ready to validate</text>
-          <text data-detail="context" x="806" y="386.9" class="t-muted" font-size="8" text-anchor="middle">next: evidence</text>
+          <text data-node-label="" data-detail-anchor="" x="1130.6" y="359" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Document result</text>
+          <text data-detail="context" x="1130.6" y="376" class="t-muted" font-size="8" text-anchor="middle">learning card + decision</text>
+        <text data-detail="fine" x="1130.6" y="394" class="t-database" font-size="7" text-anchor="middle">step 5</text>
         </g>
 
         <!-- Edge labels -->
-        <g data-detail="context" data-edge-from="audience" data-edge-to="problem" data-edge-label="their needs" data-edge-key="0" data-edge-id="e-audience-problem">
-          <rect x="297" y="99" width="62.8" height="14" rx="3" class="c-mask"/>
-          <text x="328.4" y="109" class="t-edge-emphasis" font-size="8" text-anchor="middle">their needs</text>
+        <g data-detail="context" data-edge-from="audience" data-edge-to="outcomes" data-edge-label="turn into" data-edge-key="0" data-edge-id="e-audience-outcomes">
+          <rect x="424.3999999999999" y="100" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="450.99999999999994" y="110" class="t-muted" font-size="8" text-anchor="middle">turn into</text>
         </g>
 
-        <g data-detail="context" data-edge-from="gate" data-edge-to="ready" data-edge-label="yes" data-edge-key="2" data-edge-id="e-gate-ready">
-          <rect x="716" y="347" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="731" y="357" class="t-edge-emphasis" font-size="8" text-anchor="middle">yes</text>
+        <g data-detail="context" data-edge-from="decide" data-edge-to="choose" data-edge-label="next lap" data-edge-key="2" data-edge-id="e-decide-choose">
+          <rect x="686.8999999999999" y="352" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="711.0999999999999" y="362" class="t-edge-dashed" font-size="8" text-anchor="middle">next lap</text>
         </g>
-        <g data-detail="context" data-edge-from="gate" data-edge-to="rewrite" data-edge-label="no" data-edge-key="3" data-edge-id="e-gate-rewrite">
-          <rect x="574.4" y="347" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="589.4" y="357" class="t-edge-security" font-size="8" text-anchor="middle">no</text>
+
+
+
+        <g data-detail="context" data-edge-from="outcomes" data-edge-to="choose" data-edge-label="pick one" data-edge-key="6" data-edge-id="e-outcomes-choose">
+          <rect x="536.3999999999999" y="169" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="560.5999999999999" y="179" class="t-edge-emphasis" font-size="8" text-anchor="middle">pick one</text>
         </g>
-        <g data-detail="context" data-edge-from="hypothesis" data-edge-to="bar" data-edge-label="set first" data-edge-key="4" data-edge-id="e-hypothesis-bar">
-          <rect x="562.8" y="223" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="589.4" y="233" class="t-edge-emphasis" font-size="8" text-anchor="middle">set first</text>
-        </g>
-        <g data-detail="context" data-edge-from="problem" data-edge-to="hypothesis" data-edge-label="pick one" data-edge-key="5" data-edge-id="e-problem-hypothesis">
-          <rect x="414.4" y="223" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="438.59999999999997" y="233" class="t-muted" font-size="8" text-anchor="middle">pick one</text>
-        </g>
-        <g data-detail="context" data-edge-from="rewrite" data-edge-to="hypothesis" data-edge-label="retry" data-edge-key="6" data-edge-id="e-rewrite-hypothesis">
-          <rect x="495.79999999999995" y="295" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="512.8" y="305" class="t-edge-dashed" font-size="8" text-anchor="middle">retry</text>
-        </g>
-        <g data-detail="context" data-edge-from="vision" data-edge-to="audience" data-edge-label="for whom" data-edge-key="7" data-edge-id="e-vision-audience">
-          <rect x="144" y="99" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="168.2" y="109" class="t-muted" font-size="8" text-anchor="middle">for whom</text>
+
+        <g data-detail="context" data-edge-from="vision" data-edge-to="audience" data-edge-label="for whom" data-edge-key="8" data-edge-id="e-vision-audience">
+          <rect x="210" y="100" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="234.2" y="110" class="t-muted" font-size="8" text-anchor="middle">for whom</text>
         </g>
 
         <!-- Legend -->
@@ -5476,6 +5495,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <span class="relationship-lens-eyebrow">Semantic passport</span>
             <strong class="relationship-lens-title" id="relationship-lens-title"><span id="focus-label"></span></strong>
             <span class="semantic-passport-detail" id="focus-detail" hidden></span>
+            <span class="semantic-passport-description" id="focus-description" hidden></span>
             <div class="semantic-passport-meta" id="focus-passport-meta" aria-label="Node metadata">
               <span id="focus-kind" data-passport="kind"></span>
               <span id="focus-context" data-passport="context" hidden></span>
@@ -5591,12 +5611,12 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="card">
         <div class="card-header">
           <div class="card-dot cyan"></div>
-          <h3>Testable means</h3>
+          <h3>Rules for every lap</h3>
         </div>
         <ul>
-          <li>Names who has the problem, what it is and how often</li>
-          <li>Names today&#39;s workaround</li>
-          <li>Has a number and a deadline, set before testing</li>
+          <li>One hypothesis per lap</li>
+          <li>Set the success bar before testing</li>
+          <li>Every lap ends in a written decision</li>
         </ul>
       </div>
 
@@ -5606,9 +5626,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Delivery CRM pilot (assumed)</h3>
         </div>
         <ul>
-          <li>Audience: owners of carpet and furniture cleaning businesses in Ukraine</li>
-          <li>Problem to test: paying for damage that was already there</li>
-          <li>Not validated yet: this is a bet, not a fact</li>
+          <li>Audience: owners of carpet and furniture cleaning businesses</li>
+          <li>First outcome to test: lose less money</li>
+          <li>Nothing here is validated yet</li>
         </ul>
       </div>
     </div>
@@ -8758,6 +8778,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       }
       function renderPassport(id, node) {
         setPassportValue(detail, node.getAttribute('data-node-sublabel'));
+        var descriptionText = node.getAttribute('data-node-description');
+        setPassportValue(document.getElementById('focus-description'), descriptionText);
+        var passportChip = document.getElementById('focus-chip');
+        if (passportChip) passportChip.classList.toggle('has-description', !!(descriptionText && String(descriptionText).trim()));
         setPassportValue(kind, viewerKindLabel(node.getAttribute('data-node-kind') || 'node'));
         setPassportValue(context, node.getAttribute('data-node-context'));
         setPassportValue(tag, node.getAttribute('data-node-tag'));

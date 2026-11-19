@@ -6,3 +6,4 @@
 *.delivery.json
 review-*/
 visual-check/
+*.delivery-pending.json

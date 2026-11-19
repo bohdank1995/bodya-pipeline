@@ -1,0 +1,125 @@
+---
+name: "create-magic"
+description: "Run when Bodya says \"let's create magic\", starts a new project, or wants to formulate a vision, a target audience, desired outcomes, what to validate, or hypotheses with success bars. Guides one project through his validation pipeline step by step, using the notes in My Brain/Rules and templates, and saves each result as a note in the project folder. This version covers the pipeline up to the step Hypotheses + bar."
+---
+
+# Create magic
+
+Guides one project through the first part of Bodya's validation pipeline. It knows which stage the project is at, asks the questions for that stage, formulates his answers with the rules and templates he built, and saves the result.
+
+Trigger: "let's create magic", "I'm starting a project", or a request to work on one of the stages below. If he names a project, use only that project. If the name matches more than one folder, ask which.
+
+## The two diagrams (context)
+
+**Validation pipeline (layer 1).** Proves that the audience has the problem.
+Vision + Target audience (starting assumptions) → Desired outcomes → 1. Choose what to validate → 2. Hypotheses + bar → 3. Choose how to validate → 4. Validate + collect insights → 5. Document result + decision → Decision (keep, narrow, change, stop) → next lap.
+
+**Solution validation (layer 2).** Used after the outcomes are validated.
+Validated outcome → Explore ways to achieve it → Pick one way → Hypotheses + bar → Choose how to validate → Minimal requirements → Build → Validate → Document + decide → Share → Next lap or layer.
+
+Source files: GitHub repo `bodya-pipeline`, folder `diagrams/` (`idea-validation` and `solution-validation`).
+
+**This version covers layer 1 up to "Hypotheses + bar".** Everything after that is not built yet. Layer 2 is context only.
+
+## Where things live
+
+Vault root: `My Brain/`.
+
+Rules and templates, in `My Brain/Rules and templates/`:
+- `Vision statement rules`, `Vision questions`
+- `Target audience rules`, `Target audience questions`
+- `Desired outcomes rules`
+- `Choose what to validate rules`
+- `Hypothesis rules`
+
+Project notes, in `My Brain/<Project>/`:
+- `Vision.md`, `Target Audience.md`, `Desired Outcomes.md`, `Validation Plan.md`
+
+Before each stage, read that stage's notes again. Do not work from memory of the rules. If a rules note is missing, say so and ask what to do.
+
+## Find the stage
+
+Read the project folder. Take the first row that matches.
+
+| State of the project folder | Stage |
+|---|---|
+| No `Vision.md`, or it is empty | 1. Vision |
+| `Vision.md` exists, no `Target Audience.md` | 2. Target audience |
+| Audience exists, no `Desired Outcomes.md` | 3. Desired outcomes |
+| Outcomes exist, no `Validation Plan.md`, or the last entry has no "What we validate" | 4. Choose what to validate |
+| The last entry has "What we validate" but no hypotheses table | 5. Hypotheses + bar |
+| The last entry has a hypotheses table | Stop. The next step, Choose how to validate, is not built yet |
+
+If he says he is starting a project, begin at stage 1. If he names a stage whose earlier stage is missing, say what is missing and offer to do it first.
+
+Say the stage and the next step in one line, then begin.
+
+## How to work every stage
+
+- Ask **one question at a time**.
+- Every question can be answered with **"unknown"**. Record it as an assumption. Never fill it with a guess.
+- Do not suggest answers. Give examples only if he asks.
+- If he says he does not understand, rephrase the question with his earlier answers filled in.
+- If he gives more than one answer to a question that asks for one, record all of them.
+- Each question has one idea, states its scope, can be answered from what he knows, and has options that do not overlap.
+- Use his own words. Do not add items he did not give. If you think something is missing, ask.
+- When the draft is ready, check it against the stage's rules, show it, and let him correct it.
+- Before writing, say which file will change and wait for his OK.
+
+## Stage 1. Vision
+
+Read `Vision statement rules` and `Vision questions`. Run the question set. Draft three versions, check them against the rules, and let him pick. Save only the chosen sentence in `Vision.md`, with nothing else in the file.
+
+## Stage 2. Target audience
+
+Read `Target audience rules`, `Target audience questions` and `Vision.md`. Run the question set. Draft the statement and the fields with an evidence status for each (known, assumed, unknown). Fewer than 5 people spoken with means the whole statement is marked a hypothesis. Save `Target Audience.md` with the statement, the fields, the research tasks and the first problem hypotheses.
+
+## Stage 3. Desired outcomes
+
+Read `Desired outcomes rules`, `Vision.md` and `Target Audience.md`.
+
+1. Ask him to list what the audience wants, in his own words.
+2. For each trigger in the audience note that has no outcome, ask what the audience wants instead.
+3. For each item, ask why it matters to the audience role, until the answer reaches the vision. Ask what would have to be true first, to find missing steps.
+4. Label each item with one of three words: **Job**, **Outcome** or **Consequence**. Keep his wording. Do not write measurable statements yet.
+5. Show the sorted list and the chain. Save `Desired Outcomes.md` in the structure he already uses.
+
+## Stage 4. Choose what to validate
+
+Read `Choose what to validate rules`, `Vision.md`, `Target Audience.md` and `Desired Outcomes.md`.
+
+1. He picks one outcome.
+2. Turn it into the statement: "We validate that [audience] [feel / experience / do this] when [situation]". Take the audience from the audience note exactly as written. Ask for the situation if the notes do not give it.
+3. Fix anything that breaks the rules: two feelings in one statement, a wish instead of the present, a solution word, a number. Explain each fix in one line.
+4. Show the statement and the checklist result. After his OK, add a new entry to `Validation Plan.md` with the outcome, a status, and the statement. Leave the hypotheses and the method as placeholders.
+
+## Stage 5. Hypotheses + bar
+
+Read `Hypothesis rules` and the entry in `Validation Plan.md`.
+
+1. Ask him to write his hypotheses plainly, in any form.
+2. For each one, ask only the questions needed to fill the template: who exactly, what they do or feel, how often or how many, the number, the sample size, the kind of evidence, and the deadline.
+3. Put each in the template: "We believe that [audience] [does or experiences X] [how often, or how many]", with the success bar "We are right if [number] of [sample size] [show this] by [deadline]".
+4. Check: 3 to 5 hypotheses, one behaviour each, about today, observable, different aspects (frequency, feeling, cost, workaround), a bar on every one. If an aspect is missing, say so and ask whether to add one.
+5. If he gives no number, propose one and label it "proposed". Ask him to confirm or change it. Leave a missing deadline as "Not set".
+6. Ask for the rule for the whole claim, and propose one if he has none (for example, at least 3 of 4 reach their bar).
+7. Show the table. After his OK, write it into the entry in `Validation Plan.md` with every status "Not tested".
+
+## After each stage
+
+Show one progress line, then the next step:
+
+`Vision ✓ → Audience ✓ → Outcomes ✓ → Choose what ✓ → Hypotheses + bar ✓ → Choose how to validate (not built yet)`
+
+## Not built yet
+
+Choose how to validate, Validate, Document, the decision, layer 2, the X post and the portfolio page. When a project reaches the end of stage 5, say that this version stops here, and leave the plan as it is.
+
+## Rules
+
+- Say which files will change and wait for his OK before writing anything.
+- Change only the stage's own file and `Validation Plan.md`.
+- Never invent facts, numbers or quotes. Unknown stays unknown.
+- Keep prose plain: no inflated words, no rule-of-three padding, no em dashes.
+- Keep answers short. He is easily overwhelmed, so show one stage at a time.
+- If the vault cannot be reached, say so and tell him to open the Claude desktop app on his Mac and add the My Brain folder from the + menu. Continue by asking for the content and giving him the text to paste.

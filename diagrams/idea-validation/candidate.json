@@ -2,61 +2,217 @@
   "schema_version": 2,
   "diagram_type": "workflow",
   "meta": {
-    "title": "Idea Validation: Vision + Audience → Hypothesis",
-    "subtitle": "First part of the pipeline, abstract. Pilot: Delivery CRM",
+    "title": "Validation Pipeline",
+    "subtitle": "Vision + Target audience → Desired outcomes → Validation. Abstract, pilot: Delivery CRM",
     "output": "diagrams/idea-validation/idea-validation.html",
     "quality_profile": "showcase",
-    "legend": { "mode": "hidden" }
+    "legend": {
+      "mode": "hidden"
+    }
   },
   "lanes": [
-    { "id": "inputs", "label": "Project notes" },
-    { "id": "draft", "label": "Draft" },
-    { "id": "check", "label": "Check" }
+    {
+      "id": "foundation",
+      "label": "Foundation"
+    },
+    {
+      "id": "validation",
+      "label": "Validation"
+    },
+    {
+      "id": "result",
+      "label": "Decision"
+    }
   ],
-  "phases": [
-    { "id": "ph-inputs", "label": "Inputs", "fromCol": 0, "toCol": 1 },
-    { "id": "ph-draft", "label": "Write the bet", "fromCol": 2, "toCol": 4, "variant": "emphasis" },
-    { "id": "ph-ready", "label": "Next", "fromCol": 5, "toCol": 5 }
+  "mainPath": [
+    "vision",
+    "audience",
+    "outcomes",
+    "choose",
+    "formulate",
+    "how",
+    "validate"
   ],
-  "mainPath": ["vision", "audience", "problem", "hypothesis", "bar", "gate", "ready"],
   "nodes": [
-    { "id": "vision", "lane": "inputs", "col": 0, "type": "frontend", "icon": "flag", "label": "Vision", "sublabel": "outcome for the owner" },
-    { "id": "audience", "lane": "inputs", "col": 1, "type": "external", "icon": "person", "label": "Target audience", "sublabel": "who, which segment" },
-    { "id": "problem", "lane": "draft", "col": 2, "type": "backend", "label": "Problem", "sublabel": "what blocks them" },
-    { "id": "hypothesis", "lane": "draft", "col": 3, "type": "backend", "label": "Hypothesis", "sublabel": "who, what, how often" },
-    { "id": "bar", "lane": "draft", "col": 4, "type": "messagebus", "label": "Success bar", "sublabel": "number + deadline" },
-    { "id": "gate", "lane": "check", "col": 4, "type": "security", "icon": "decision", "label": "Testable?", "sublabel": "can it be wrong?" },
-    { "id": "rewrite", "lane": "check", "col": 3, "type": "external", "icon": "failure", "label": "Rewrite", "sublabel": "narrow or sharpen" },
-    { "id": "ready", "lane": "check", "col": 5, "type": "backend", "icon": "success", "label": "Ready to validate", "sublabel": "next: evidence" }
+    {
+      "id": "vision",
+      "lane": "foundation",
+      "col": 0,
+      "type": "external",
+      "icon": "flag",
+      "label": "Vision",
+      "sublabel": "where we want to get to",
+      "width": 158,
+      "description": "The change you want to create, in one or two sentences. It is a direction you choose, not a proven fact, so it stays a starting assumption until evidence supports it."
+    },
+    {
+      "id": "audience",
+      "lane": "foundation",
+      "col": 1,
+      "type": "external",
+      "icon": "person",
+      "label": "Target audience",
+      "sublabel": "who we build it for",
+      "width": 158,
+      "description": "The specific group of people the vision is for: who they are, which segment first, and who qualifies. A starting assumption that the evidence will keep, narrow or change."
+    },
+    {
+      "id": "outcomes",
+      "lane": "foundation",
+      "col": 2,
+      "type": "frontend",
+      "icon": "start",
+      "label": "Desired outcomes",
+      "sublabel": "what they want",
+      "width": 158
+    },
+    {
+      "id": "choose",
+      "lane": "validation",
+      "col": 2,
+      "type": "backend",
+      "label": "Choose what to validate",
+      "sublabel": "one outcome or claim",
+      "width": 158,
+      "tag": "step 1"
+    },
+    {
+      "id": "formulate",
+      "lane": "validation",
+      "col": 3,
+      "type": "backend",
+      "label": "Hypotheses + bar",
+      "sublabel": "number set before testing",
+      "width": 158,
+      "tag": "step 2"
+    },
+    {
+      "id": "how",
+      "lane": "validation",
+      "col": 4,
+      "type": "backend",
+      "label": "Choose how to validate",
+      "sublabel": "cheapest honest test",
+      "width": 158,
+      "tag": "step 3"
+    },
+    {
+      "id": "validate",
+      "lane": "validation",
+      "col": 5,
+      "type": "messagebus",
+      "label": "Validate",
+      "sublabel": "collect insights, evidence",
+      "width": 158,
+      "tag": "step 4"
+    },
+    {
+      "id": "document",
+      "lane": "result",
+      "col": 5,
+      "type": "database",
+      "label": "Document result",
+      "sublabel": "learning card + decision",
+      "width": 158,
+      "tag": "step 5"
+    },
+    {
+      "id": "decide",
+      "lane": "result",
+      "col": 4,
+      "type": "security",
+      "icon": "decision",
+      "label": "Decision",
+      "sublabel": "keep, narrow, change",
+      "width": 158
+    }
   ],
   "edges": [
-    { "id": "e-vision-audience", "from": "vision", "to": "audience", "label": "for whom" },
-    { "id": "e-audience-problem", "from": "audience", "to": "problem", "label": "their needs", "variant": "emphasis" },
-    { "id": "e-problem-hypothesis", "from": "problem", "to": "hypothesis", "label": "pick one" },
-    { "id": "e-hypothesis-bar", "from": "hypothesis", "to": "bar", "label": "set first", "variant": "emphasis" },
-    { "id": "e-bar-gate", "from": "bar", "to": "gate" },
-    { "id": "e-gate-ready", "from": "gate", "to": "ready", "label": "yes", "variant": "emphasis" },
-    { "id": "e-gate-rewrite", "from": "gate", "to": "rewrite", "label": "no", "variant": "security", "role": "error" },
-    { "id": "e-rewrite-hypothesis", "from": "rewrite", "to": "hypothesis", "label": "retry", "variant": "dashed", "role": "return" }
+    {
+      "id": "e-vision-audience",
+      "from": "vision",
+      "to": "audience",
+      "label": "for whom"
+    },
+    {
+      "id": "e-audience-outcomes",
+      "from": "audience",
+      "to": "outcomes",
+      "label": "turn into"
+    },
+    {
+      "id": "e-outcomes-choose",
+      "from": "outcomes",
+      "to": "choose",
+      "label": "pick one",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-choose-formulate",
+      "from": "choose",
+      "to": "formulate"
+    },
+    {
+      "id": "e-formulate-how",
+      "from": "formulate",
+      "to": "how"
+    },
+    {
+      "id": "e-how-validate",
+      "from": "how",
+      "to": "validate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-validate-document",
+      "from": "validate",
+      "to": "document",
+      "role": "branch"
+    },
+    {
+      "id": "e-document-decide",
+      "from": "document",
+      "to": "decide",
+      "variant": "emphasis",
+      "role": "branch"
+    },
+    {
+      "id": "e-decide-choose",
+      "from": "decide",
+      "to": "choose",
+      "label": "next lap",
+      "variant": "dashed",
+      "role": "return"
+    }
   ],
   "cards": [
     {
       "dot": "cyan",
-      "title": "Testable means",
+      "title": "Rules for every lap",
       "items": [
-        "Names who has the problem, what it is and how often",
-        "Names today's workaround",
-        "Has a number and a deadline, set before testing"
+        "One hypothesis per lap",
+        "Set the success bar before testing",
+        "Every lap ends in a written decision"
       ]
     },
     {
       "dot": "amber",
       "title": "Delivery CRM pilot (assumed)",
       "items": [
-        "Audience: owners of carpet and furniture cleaning businesses in Ukraine",
-        "Problem to test: paying for damage that was already there",
-        "Not validated yet: this is a bet, not a fact"
+        "Audience: owners of carpet and furniture cleaning businesses",
+        "First outcome to test: lose less money",
+        "Nothing here is validated yet"
       ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-start",
+      "label": "Starting assumptions",
+      "lane": "foundation",
+      "fromCol": 0,
+      "toCol": 1,
+      "variant": "emphasis"
     }
   ]
 }
