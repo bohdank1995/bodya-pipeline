@@ -4,18 +4,188 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pipeline</title>
+  <link rel="stylesheet" href="workspace.css">
   <style>
-    :root { color-scheme: light dark; --bg: #f6f7f9; --gap: 16px; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #0b1020; } }
-    html, body { margin: 0; background: var(--bg); }
-    main { display: flex; flex-direction: column; gap: var(--gap); padding: var(--gap); }
-    iframe { display: block; width: 100%; height: 88vh; min-height: 640px; border: 0; border-radius: 12px; background: transparent; }
+    :root {
+      color-scheme: light dark;
+      --strip: #dfe1e5;      /* tab strip background */
+      --tab: #ffffff;        /* active tab and page */
+      --tab-text: #1f1f1f;
+      --muted: #5f6368;
+      --hover: rgba(60, 64, 67, .12);
+      --menu-bg: #ffffff;
+      --menu-border: rgba(60, 64, 67, .24);
+      --menu-hover: rgba(60, 64, 67, .08);
+      --bar-h: 40px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --strip: #202124;
+        --tab: #35363a;
+        --tab-text: #e8eaed;
+        --muted: #9aa0a6;
+        --hover: rgba(232, 234, 237, .12);
+        --menu-bg: #292a2d;
+        --menu-border: rgba(232, 234, 237, .2);
+        --menu-hover: rgba(232, 234, 237, .1);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body { display: flex; flex-direction: column; background: var(--tab); font: 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    /* Tab strip */
+    .tabs { display: flex; align-items: flex-end; gap: 2px; height: var(--bar-h); padding: 6px 8px 0; background: var(--strip); flex: none; }
+    .tab {
+      display: flex; align-items: center; gap: 8px; flex: 0 1 240px; min-width: 0;
+      height: 34px; padding: 0 8px 0 14px; border-radius: 10px 10px 0 0;
+      color: var(--muted); white-space: nowrap; user-select: none; cursor: default;
+    }
+    .tab:hover { background: var(--hover); }
+    .tab[aria-selected="true"] { background: var(--tab); color: var(--tab-text); }
+    .tab .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #0a8fb3; }
+    .tab .title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+    .tab:not([data-pinned]) { padding-right: 6px; }
+    .tab[data-pinned] { padding-right: 14px; }
+    .close {
+      flex: none; display: grid; place-items: center; width: 20px; height: 20px; padding: 0;
+      border: 0; border-radius: 50%; background: transparent; color: inherit; font-size: 15px; line-height: 1; cursor: pointer;
+    }
+    .close:hover { background: var(--hover); }
+
+    /* New tab button */
+    .new-tab {
+      flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: 0 0 3px 6px;
+      border: 0; border-radius: 50%; background: transparent; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer;
+    }
+    .new-tab:hover, .new-tab[aria-expanded="true"] { background: var(--hover); }
+
+    /* Project dropdown */
+    .menu {
+      position: fixed; z-index: 10; min-width: 200px; padding: 6px 0;
+      background: var(--menu-bg); border: 1px solid var(--menu-border); border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+    }
+    .menu[hidden] { display: none; }
+    .menu-item {
+      display: block; width: 100%; padding: 10px 16px; border: 0; background: transparent;
+      color: var(--tab-text); font: inherit; text-align: left; cursor: pointer;
+    }
+    .menu-item:hover, .menu-item:focus-visible { background: var(--menu-hover); outline: none; }
+
+    /* Page below the strip */
+    .view { flex: 1; min-height: 0; position: relative; }
+    .view iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: var(--tab); }
+    .view iframe[hidden] { display: none; }
   </style>
 </head>
 <body>
-  <main>
-    <iframe src="idea-validation/idea-validation.html" title="Validation pipeline"></iframe>
-    <iframe src="solution-validation/solution-validation.html" title="Solution validation"></iframe>
-  </main>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Pipelines">
+    <button class="new-tab" id="new-tab" type="button" aria-label="New tab" aria-haspopup="menu" aria-expanded="false" aria-controls="menu">+</button>
+  </div>
+  <div class="menu" id="menu" role="menu" aria-label="Projects" hidden></div>
+  <main class="view" id="view" role="tabpanel"></main>
+
+  <script src="workspace.js"></script>
+  <script>
+    // Projects offered in the "+" menu. Each opens its own tab.
+    // A project opens as a workspace: the plan checklist on the left, the pipeline steps column on the right.
+    // `plan`, `steps` and `diagram` are written by scripts/build_project_diagram.py.
+    var PROJECTS = [
+      {
+        id: 'delivery-crm', name: 'Delivery CRM', kind: 'workspace',
+        plan: 'delivery-crm/plan.js', steps: 'delivery-crm/steps.js', diagram: 'delivery-crm/delivery-crm.html'
+      }
+    ];
+
+    // The first tab is always open and cannot be closed.
+    var tabs = [
+      { id: 'main', name: 'Validation to Solution Pipeline', src: 'pipeline/validation-to-solution.html', pinned: true }
+    ];
+    var activeId = 'main';
+
+    var strip = document.getElementById('tabs');
+    var newTab = document.getElementById('new-tab');
+    var menu = document.getElementById('menu');
+    var view = document.getElementById('view');
+
+    function render() {
+      Array.prototype.slice.call(strip.querySelectorAll('.tab')).forEach(function (el) { el.remove(); });
+      tabs.forEach(function (t) {
+        var el = document.createElement('div');
+        el.className = 'tab';
+        el.setAttribute('role', 'tab');
+        el.setAttribute('aria-selected', String(t.id === activeId));
+        el.tabIndex = 0;
+        if (t.pinned) el.setAttribute('data-pinned', 'true');
+        el.innerHTML = '<span class="dot" aria-hidden="true"></span><span class="title"></span>';
+        el.querySelector('.title').textContent = t.name;
+        el.addEventListener('click', function () { select(t.id); });
+        el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(t.id); } });
+        if (!t.pinned) {
+          var x = document.createElement('button');
+          x.className = 'close'; x.type = 'button'; x.textContent = '×';
+          x.setAttribute('aria-label', 'Close ' + t.name);
+          x.addEventListener('click', function (e) { e.stopPropagation(); closeTab(t.id); });
+          el.appendChild(x);
+        }
+        strip.insertBefore(el, newTab);
+
+        var panel = document.getElementById('panel-' + t.id);
+        if (!panel) {
+          if (t.kind === 'workspace') {
+            panel = document.createElement('div');
+            panel.id = 'panel-' + t.id;
+            view.appendChild(panel);
+            window.Workspace.mount(panel, t);
+          } else {
+            panel = document.createElement('iframe');
+            panel.id = 'panel-' + t.id; panel.src = t.src; panel.title = t.name;
+            view.appendChild(panel);
+          }
+        }
+        panel.hidden = t.id !== activeId;
+      });
+    }
+
+    function select(id) { activeId = id; render(); }
+
+    function openProject(p) {
+      if (!tabs.some(function (t) { return t.id === p.id; })) tabs.push(p);
+      select(p.id);
+    }
+
+    function closeTab(id) {
+      var i = tabs.findIndex(function (t) { return t.id === id; });
+      if (i < 1) return; // the first tab never closes
+      tabs.splice(i, 1);
+      var panel = document.getElementById('panel-' + id);
+      if (panel) panel.remove();
+      if (activeId === id) activeId = tabs[Math.min(i, tabs.length - 1)].id;
+      render();
+    }
+
+    // "+" dropdown
+    PROJECTS.forEach(function (p) {
+      var b = document.createElement('button');
+      b.className = 'menu-item'; b.type = 'button'; b.setAttribute('role', 'menuitem'); b.textContent = p.name;
+      b.addEventListener('click', function () { closeMenu(); openProject(p); });
+      menu.appendChild(b);
+    });
+    function openMenu() {
+      var r = newTab.getBoundingClientRect();
+      menu.style.left = Math.max(8, r.left) + 'px';
+      menu.style.top = (r.bottom + 6) + 'px';
+      menu.hidden = false; newTab.setAttribute('aria-expanded', 'true');
+      menu.querySelector('.menu-item').focus();
+    }
+    function closeMenu() { menu.hidden = true; newTab.setAttribute('aria-expanded', 'false'); }
+    newTab.addEventListener('click', function (e) { e.stopPropagation(); menu.hidden ? openMenu() : closeMenu(); });
+    document.addEventListener('click', function (e) { if (!menu.hidden && !menu.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { closeMenu(); newTab.focus(); } });
+    window.addEventListener('blur', closeMenu); // a click inside a diagram frame also closes the menu
+
+    render();
+  </script>
 </body>
 </html>

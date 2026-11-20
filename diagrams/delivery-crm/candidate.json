@@ -1,0 +1,474 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Delivery CRM",
+    "output": "diagrams/delivery-crm/delivery-crm.html",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "visible": false
+        },
+        "backend": {
+          "visible": false
+        },
+        "cloud": {
+          "visible": false
+        },
+        "database": {
+          "visible": false
+        },
+        "messagebus": {
+          "visible": false
+        },
+        "external": {
+          "label": "Done",
+          "visible": true
+        },
+        "security": {
+          "label": "You decide"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "foundation",
+      "label": "Layer 1 · Foundation"
+    },
+    {
+      "id": "validation",
+      "label": "Layer 1 · Validation"
+    },
+    {
+      "id": "result",
+      "label": "Layer 1 · After validating"
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge"
+    },
+    {
+      "id": "plan",
+      "label": "Layer 2 · Choose + plan"
+    },
+    {
+      "id": "test",
+      "label": "Layer 2 · Build + learn"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-start",
+      "label": "Starting assumptions",
+      "lane": "foundation",
+      "fromCol": 0,
+      "toCol": 1,
+      "variant": "emphasis"
+    },
+    {
+      "id": "g-now",
+      "label": "You are here",
+      "lane": "validation",
+      "fromCol": 5,
+      "toCol": 5,
+      "variant": "security"
+    }
+  ],
+  "mainPath": [
+    "vision",
+    "audience",
+    "outcomes",
+    "choose",
+    "formulate",
+    "how",
+    "validate"
+  ],
+  "nodes": [
+    {
+      "id": "vision",
+      "lane": "foundation",
+      "col": 0,
+      "type": "external",
+      "icon": "flag",
+      "label": "Vision",
+      "sublabel": "where we want to get to",
+      "width": 158,
+      "description": "The change you want to create, in one or two sentences. It is a direction you choose, not a proven fact, so it stays a starting assumption until evidence supports it."
+    },
+    {
+      "id": "audience",
+      "lane": "foundation",
+      "col": 1,
+      "type": "external",
+      "icon": "person",
+      "label": "Target audience",
+      "sublabel": "who we build it for",
+      "width": 158,
+      "description": "The specific group of people the vision is for: who they are, which segment first, and who qualifies. A starting assumption that the evidence will keep, narrow or change."
+    },
+    {
+      "id": "outcomes",
+      "lane": "foundation",
+      "col": 2,
+      "type": "external",
+      "icon": "start",
+      "label": "Desired outcomes",
+      "sublabel": "what they want",
+      "width": 158
+    },
+    {
+      "id": "choose",
+      "lane": "validation",
+      "col": 2,
+      "type": "external",
+      "label": "Choose what to validate",
+      "sublabel": "one outcome or claim",
+      "width": 158,
+      "tag": "step 1",
+      "icon": "decision"
+    },
+    {
+      "id": "formulate",
+      "lane": "validation",
+      "col": 3,
+      "type": "external",
+      "label": "Hypotheses + bar",
+      "sublabel": "number set before testing",
+      "width": 158,
+      "tag": "step 2",
+      "icon": "decision"
+    },
+    {
+      "id": "how",
+      "lane": "validation",
+      "col": 4,
+      "type": "external",
+      "label": "Choose how to validate",
+      "sublabel": "cheapest honest test",
+      "width": 158,
+      "tag": "step 3",
+      "icon": "decision"
+    },
+    {
+      "id": "validate",
+      "lane": "validation",
+      "col": 5,
+      "type": "messagebus",
+      "label": "Validate",
+      "sublabel": "profile, then calls",
+      "width": 158,
+      "tag": "you are here",
+      "description": "Starts with the validation profile: who, how many, which methods and what counts. Then you talk to the people in the profile.",
+      "height": 104
+    },
+    {
+      "id": "evidence",
+      "lane": "result",
+      "col": 5,
+      "type": "database",
+      "label": "Evidence log",
+      "sublabel": "one row per evidence",
+      "tag": "step 4",
+      "width": 158,
+      "description": "While validating, write down what each person said or showed: one row per piece of evidence, with exact words, the hypothesis, for or against, and whether it was unprompted."
+    },
+    {
+      "id": "result",
+      "lane": "result",
+      "col": 4,
+      "type": "security",
+      "icon": "decision",
+      "label": "Result + decision",
+      "sublabel": "count, verdict, decide",
+      "tag": "step 5",
+      "width": 158,
+      "description": "Count the people for and against each hypothesis, compare with its success bar, apply the verdict rule, then decide: keep, narrow, change or stop."
+    },
+    {
+      "id": "share1",
+      "lane": "result",
+      "col": 3,
+      "type": "cloud",
+      "label": "Share",
+      "sublabel": "X post, portfolio case",
+      "width": 158,
+      "tag": "step 5"
+    },
+    {
+      "id": "gate",
+      "lane": "result",
+      "col": 1,
+      "type": "security",
+      "icon": "decision",
+      "label": "Gate",
+      "sublabel": "all checks pass?",
+      "width": 158,
+      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated outcome crosses the bridge into layer 2."
+    },
+    {
+      "id": "validated",
+      "lane": "bridge",
+      "col": 1,
+      "type": "frontend",
+      "icon": "flag",
+      "label": "Validated outcome",
+      "sublabel": "layer 1 result, layer 2 input",
+      "width": 158,
+      "description": "Written only when the gate passes: the outcome, its strongest evidence, the strongest evidence against, and what is still unknown. It is the one thing that crosses from layer 1 into layer 2, where solution validation starts from it."
+    },
+    {
+      "id": "list",
+      "lane": "plan",
+      "col": 1,
+      "type": "frontend",
+      "label": "Explore ways to achieve it",
+      "sublabel": "from all evidence we have",
+      "width": 180,
+      "description": "Starts from the validated outcome that crossed the bridge from layer 1. List the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
+    },
+    {
+      "id": "pick",
+      "lane": "plan",
+      "col": 2,
+      "type": "security",
+      "label": "Pick one way",
+      "sublabel": "most evidence, cheapest test",
+      "width": 158,
+      "description": "Choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply.",
+      "icon": "decision"
+    },
+    {
+      "id": "hypothesis",
+      "lane": "plan",
+      "col": 3,
+      "type": "security",
+      "label": "Hypotheses + bar",
+      "sublabel": "number set before building",
+      "width": 158,
+      "description": "If we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules.",
+      "icon": "decision"
+    },
+    {
+      "id": "how2",
+      "lane": "plan",
+      "col": 4,
+      "type": "security",
+      "label": "Choose how to validate",
+      "sublabel": "cheapest honest test",
+      "width": 158,
+      "icon": "decision"
+    },
+    {
+      "id": "requirements",
+      "lane": "plan",
+      "col": 5,
+      "type": "security",
+      "label": "Minimal requirements",
+      "sublabel": "smallest version",
+      "width": 158,
+      "icon": "decision"
+    },
+    {
+      "id": "build",
+      "lane": "test",
+      "col": 5,
+      "type": "backend",
+      "label": "Build",
+      "sublabel": "fast, with AI",
+      "width": 158
+    },
+    {
+      "id": "validate2",
+      "lane": "test",
+      "col": 4,
+      "type": "messagebus",
+      "label": "Validate",
+      "sublabel": "real users, real data",
+      "width": 158
+    },
+    {
+      "id": "document",
+      "lane": "test",
+      "col": 3,
+      "type": "security",
+      "label": "Document + decide",
+      "sublabel": "keep, narrow, change, stop",
+      "width": 158,
+      "icon": "decision"
+    },
+    {
+      "id": "share",
+      "lane": "test",
+      "col": 2,
+      "type": "cloud",
+      "label": "Share",
+      "sublabel": "X post, portfolio case",
+      "width": 158
+    },
+    {
+      "id": "next",
+      "lane": "test",
+      "col": 1,
+      "type": "security",
+      "icon": "decision",
+      "label": "Next lap or layer",
+      "sublabel": "repeat or go deeper",
+      "width": 158
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-vision-audience",
+      "from": "vision",
+      "to": "audience",
+      "label": "for whom",
+      "variant": "default"
+    },
+    {
+      "id": "e-audience-outcomes",
+      "from": "audience",
+      "to": "outcomes",
+      "label": "turn into",
+      "variant": "default"
+    },
+    {
+      "id": "e-outcomes-choose",
+      "from": "outcomes",
+      "to": "choose",
+      "label": "pick one",
+      "variant": "default"
+    },
+    {
+      "id": "e-choose-formulate",
+      "from": "choose",
+      "to": "formulate",
+      "variant": "default"
+    },
+    {
+      "id": "e-formulate-how",
+      "from": "formulate",
+      "to": "how",
+      "variant": "default"
+    },
+    {
+      "id": "e-how-validate",
+      "from": "how",
+      "to": "validate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-validate-evidence",
+      "from": "validate",
+      "to": "evidence",
+      "role": "branch"
+    },
+    {
+      "id": "e-evidence-result",
+      "from": "evidence",
+      "to": "result",
+      "role": "branch"
+    },
+    {
+      "id": "e-result-share1",
+      "from": "result",
+      "to": "share1",
+      "role": "branch"
+    },
+    {
+      "id": "e-share1-gate",
+      "from": "share1",
+      "to": "gate",
+      "role": "branch",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-gate-choose",
+      "from": "gate",
+      "to": "choose",
+      "label": "next lap",
+      "variant": "dashed",
+      "role": "return"
+    },
+    {
+      "id": "e-gate-validated",
+      "from": "gate",
+      "to": "validated",
+      "label": "pass",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "e-validated-list",
+      "from": "validated",
+      "to": "list",
+      "label": "start from",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "l2-e-list-pick",
+      "from": "list",
+      "to": "pick",
+      "variant": "emphasis"
+    },
+    {
+      "id": "l2-e-pick-hypothesis",
+      "from": "pick",
+      "to": "hypothesis"
+    },
+    {
+      "id": "l2-e-hypothesis-how",
+      "from": "hypothesis",
+      "to": "how2"
+    },
+    {
+      "id": "l2-e-how-requirements",
+      "from": "how2",
+      "to": "requirements"
+    },
+    {
+      "id": "l2-e-requirements-build",
+      "from": "requirements",
+      "to": "build",
+      "variant": "emphasis"
+    },
+    {
+      "id": "l2-e-build-validate",
+      "from": "build",
+      "to": "validate2",
+      "role": "branch"
+    },
+    {
+      "id": "l2-e-validate-document",
+      "from": "validate2",
+      "to": "document",
+      "role": "branch",
+      "variant": "emphasis"
+    },
+    {
+      "id": "l2-e-document-share",
+      "from": "document",
+      "to": "share",
+      "role": "branch"
+    },
+    {
+      "id": "l2-e-share-next",
+      "from": "share",
+      "to": "next",
+      "role": "branch"
+    },
+    {
+      "id": "l2-e-next-list",
+      "from": "next",
+      "to": "list",
+      "label": "next lap",
+      "variant": "dashed",
+      "role": "return"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "diagram_type": "workflow",
   "meta": {
     "title": "Solution Validation",
-    "subtitle": "After the desired outcomes are validated. Abstract, applies to any project",
+    "subtitle": "Applies to any project",
     "output": "diagrams/solution-validation/solution-validation.html",
     "quality_profile": "showcase",
     "legend": {
@@ -51,7 +51,6 @@
     }
   ],
   "mainPath": [
-    "outcomes",
     "list",
     "pick",
     "hypothesis",
@@ -61,17 +60,6 @@
   ],
   "nodes": [
     {
-      "id": "outcomes",
-      "lane": "plan",
-      "col": 0,
-      "type": "external",
-      "icon": "flag",
-      "label": "Validated outcome",
-      "sublabel": "what we proved in layer 1",
-      "width": 158,
-      "description": "The result of layer 1. Example: owners really want to save time, with evidence."
-    },
-    {
       "id": "list",
       "lane": "plan",
       "col": 1,
@@ -79,7 +67,7 @@
       "label": "Explore ways to achieve it",
       "sublabel": "from all evidence we have",
       "width": 180,
-      "description": "List the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
+      "description": "Starts from the validated outcome that crossed the bridge from layer 1. List the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
     },
     {
       "id": "pick",
@@ -172,11 +160,6 @@
     }
   ],
   "edges": [
-    {
-      "id": "e-outcomes-list",
-      "from": "outcomes",
-      "to": "list"
-    },
     {
       "id": "e-list-pick",
       "from": "list",

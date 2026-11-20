@@ -7,3 +7,5 @@
 review-*/
 visual-check/
 *.delivery-pending.json
+
+diagrams/*/plan.js

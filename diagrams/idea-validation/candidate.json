@@ -141,7 +141,7 @@
     {
       "id": "result",
       "lane": "result",
-      "col": 4,
+      "col": 3,
       "type": "security",
       "icon": "decision",
       "label": "Result + decision",
@@ -153,24 +153,13 @@
     {
       "id": "gate",
       "lane": "result",
-      "col": 3,
+      "col": 1,
       "type": "security",
       "icon": "decision",
       "label": "Gate",
       "sublabel": "all checks pass?",
       "width": 158,
-      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap."
-    },
-    {
-      "id": "validated",
-      "lane": "result",
-      "col": 2,
-      "type": "external",
-      "icon": "flag",
-      "label": "Validated outcome",
-      "sublabel": "start of layer 2",
-      "width": 158,
-      "description": "Written only when the gate passes: the outcome, its strongest evidence, the strongest evidence against, and what is still unknown. Solution validation starts from here."
+      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated outcome crosses the bridge into layer 2."
     }
   ],
   "edges": [
@@ -225,14 +214,6 @@
       "id": "e-result-gate",
       "from": "result",
       "to": "gate",
-      "role": "branch",
-      "variant": "emphasis"
-    },
-    {
-      "id": "e-gate-validated",
-      "from": "gate",
-      "to": "validated",
-      "label": "pass",
       "role": "branch",
       "variant": "emphasis"
     },
