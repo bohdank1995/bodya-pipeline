@@ -17,7 +17,14 @@ Vault root: `My Brain/`.
 
 Rules and templates, in `My Brain/Rules and templates/`: `Vision statement rules`, `Vision questions`, `Target audience rules`, `Target audience questions`, `Desired outcomes rules`, `Choose what to validate rules`, `Hypothesis rules`, `Choose how to validate rules`, `Validation profile rules`, `Evidence log rules`, `Result and decision rules`, `Gate rules`.
 
-Project notes, in `My Brain/<Project>/`: `Vision.md`, `Target Audience.md`, `Desired Outcomes.md`, `Validation Plan.md`, `Evidence Log.md`.
+Project notes, in `My Brain/<Project>/`. The number is the order in the diagram, so the files sort in the same order:
+
+- `0 Plan.md`: a checklist of what to do in the current stage. See `references/plan-checklist.md`.
+- `1 Vision.md`, `2 Target Audience.md`, `3 Desired Outcomes.md`.
+- `4 Validation/`: one folder for one lap, with one short note for each step of the diagram: `1 Choose what to validate.md`, `2 Hypotheses and bar.md`, `3 Choose how to validate.md`, `4 Validate.md` (the validation profile), `5 Evidence log.md`, `6 Result and decision.md`, `7 Share.md`, `8 Gate.md`.
+- `5 Validated outcome.md`: written only when the gate passes.
+
+When a note is missing, create it with its number. Find notes by the name after the number, so a renumbered note is still found. Notes stay short. They link to each other and to the rules note they follow.
 
 Before each stage, read that stage's notes again. Do not work from memory of the rules. If a rules note is missing, say so and ask what to do.
 
@@ -27,20 +34,20 @@ Read the project folder. Take the first row that matches, then read the referenc
 
 | State of the project folder | Stage | Reference |
 |---|---|---|
-| No `Vision.md`, or it is empty | 1. Vision | `foundation.md` |
-| `Vision.md` exists, no `Target Audience.md` | 2. Target audience | `foundation.md` |
-| Audience exists, no `Desired Outcomes.md` | 3. Desired outcomes | `foundation.md` |
-| Outcomes exist, no `Validation Plan.md`, or the last entry has no "What we validate" | 4. Choose what to validate | `plan-the-test.md` |
-| The last entry has "What we validate" but no hypotheses table | 5. Hypotheses + bar | `plan-the-test.md` |
-| The last entry has a hypotheses table but no methods table | 6. Choose how to validate | `plan-the-test.md` |
-| The last entry has a methods table but no next steps table | 6, part 2: next steps | `plan-the-test.md` |
-| The last entry has a next steps table but no validation profile | 7, part 1: validation profile | `validate-and-gate.md` |
-| The profile exists, and `Evidence Log.md` has fewer people than the sample size for this entry | 7, part 2: evidence log | `validate-and-gate.md` |
-| The evidence log reaches the sample size, and "Result and decision" is empty | 8. Result + decision | `validate-and-gate.md` |
-| The result is written, and the gate has not run | 9. Gate | `validate-and-gate.md` |
+| No `1 Vision.md`, or it is empty | 1. Vision | `foundation.md` |
+| `1 Vision.md` exists, no `2 Target Audience.md` | 2. Target audience | `foundation.md` |
+| Audience exists, no `3 Desired Outcomes.md` | 3. Desired outcomes | `foundation.md` |
+| Outcomes exist, and `4 Validation/1 Choose what to validate.md` is missing or has no claim ("We validate that ...") | 4. Choose what to validate | `plan-the-test.md` |
+| The claim exists, but `2 Hypotheses and bar.md` has no H1 row | 5. Hypotheses + bar | `plan-the-test.md` |
+| The hypotheses exist, but `3 Choose how to validate.md` has no methods table | 6. Choose how to validate | `plan-the-test.md` |
+| The methods table exists, there is no next steps table, and `4 Validate.md` has no profile | 6, part 2: next steps (offer it, he may skip it) | `plan-the-test.md` |
+| The methods table exists, and `4 Validate.md` has no profile | 7, part 1: validation profile | `validate-and-gate.md` |
+| The profile exists, and `5 Evidence log.md` has fewer people than the sample size | 7, part 2: evidence log | `validate-and-gate.md` |
+| The evidence log reaches the sample size, and the decision in `6 Result and decision.md` is empty | 8. Result + decision | `validate-and-gate.md` |
+| The result is written, and `8 Gate.md` says "Not run yet" | 9. Gate | `validate-and-gate.md` |
 | The gate result is "Pass" | Stop. Layer 2 is not built yet | |
 | The gate result is "Not yet" | Back to stage 7, part 2, for more evidence | `validate-and-gate.md` |
-| The gate result is "Fail" | A new entry, starting at stage 4 | `plan-the-test.md` |
+| The gate result is "Fail" | A new lap: a new validation folder (for example `4 Validation 2/`), starting at stage 4 | `plan-the-test.md` |
 
 If he asks for the result before the sample size is reached, do stage 8 and use "Not enough data" where the rules say so.
 
@@ -74,14 +81,16 @@ Show one progress line, then the next step:
 
 `Vision ✓ → Audience ✓ → Outcomes ✓ → Choose what ✓ → Hypotheses + bar ✓ → Choose how ✓ → Validate ✓ → Result ✓ → Gate ✓ → Layer 2 (not built yet)`
 
+Then rewrite `0 Plan.md` for the next stage, following `references/plan-checklist.md`. Say that you did.
+
 ## Not built yet
 
-Layer 2 (solution validation), the X post and the portfolio page. When the gate passes, say that this version stops here, and leave the plan as it is.
+Layer 2 (solution validation), the X post and the portfolio page. When the gate passes, say that this version stops here, and leave the notes as they are.
 
 ## Rules
 
 - Say which files will change and wait for his OK before writing anything.
-- Change only the stage's own file, `Validation Plan.md` and `Evidence Log.md`.
+- Change only the stage's own note, `5 Evidence log.md` in stage 7, and `0 Plan.md` after each stage.
 - Never invent facts, numbers or quotes. Unknown stays unknown.
 - Keep prose plain: no inflated words, no rule-of-three padding, no em dashes.
 - Keep answers short. He is easily overwhelmed, so show one stage at a time.
