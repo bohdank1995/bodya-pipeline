@@ -22,7 +22,7 @@ Project notes, in `My Brain/<Project>/`. The number is the order in the diagram,
 - `0 Plan.md`: a checklist of what to do in the current stage. See `references/plan-checklist.md`.
 - `1 Vision.md`, `2 Target Audience.md`, `3 Desired Outcomes.md`.
 - `4 Validation/`: one folder for one lap, with one short note for each step of the diagram: `1 Choose what to validate.md`, `2 Hypotheses and bar.md`, `3 Choose how to validate.md`, `4 Validate.md` (the validation profile), `5 Evidence log.md`, `6 Result and decision.md`, `7 Share.md`, `8 Gate.md`.
-- `5 Validated outcome.md`: written only when the gate passes.
+- `5 Validated opportunity.md`: written only when the gate passes.
 
 When a note is missing, create it with its number. Find notes by the name after the number, so a renumbered note is still found. Notes stay short. They link to each other and to the rules note they follow.
 

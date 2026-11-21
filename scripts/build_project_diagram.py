@@ -294,8 +294,8 @@ STAGE_TASKS = {
                "Compare with the success bars and the verdict rule", "Decide: keep, narrow, change or stop",
                "Write what you learned and the next step"],
     "share1": ["Write the post or the portfolio case in [[7 Share]]"],
-    "gate": ["Run the six checks in [[8 Gate]]", "If it passes, write [[5 Validated outcome]]"],
-    "validated": ["Write [[5 Validated outcome]]"],
+    "gate": ["Run the six checks in [[8 Gate]]", "If it passes, write [[5 Validated opportunity]]"],
+    "validated": ["Write [[5 Validated opportunity]]"],
 }
 
 

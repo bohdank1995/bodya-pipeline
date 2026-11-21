@@ -206,7 +206,7 @@
       "label": "Gate",
       "sublabel": "all checks pass?",
       "width": 158,
-      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated outcome crosses the bridge into layer 2."
+      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated opportunity crosses the bridge into layer 2."
     },
     {
       "id": "validated",
@@ -214,20 +214,20 @@
       "col": 1,
       "type": "frontend",
       "icon": "flag",
-      "label": "Validated outcome",
-      "sublabel": "layer 1 result, layer 2 input",
-      "width": 158,
-      "description": "Written only when the gate passes: the outcome, its strongest evidence, the strongest evidence against, and what is still unknown. It is the one thing that crosses from layer 1 into layer 2, where solution validation starts from it."
+      "label": "Validated opportunity",
+      "sublabel": "problem proven by evidence",
+      "width": 172,
+      "description": "Written only when the gate passes: a proven fact that stands between you and the desired outcome. It can be the audience's pain or your own business problem, such as churn. It holds the fact, its strongest evidence, the strongest evidence against, and what is still unknown. It is the one thing that crosses from layer 1 into layer 2, where solution validation starts from it."
     },
     {
       "id": "list",
       "lane": "plan",
       "col": 1,
       "type": "frontend",
-      "label": "Explore ways to achieve it",
-      "sublabel": "from all evidence we have",
-      "width": 180,
-      "description": "Starts from the validated outcome that crossed the bridge from layer 1. List the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
+      "label": "Explore solutions",
+      "sublabel": "how might we solve this problem?",
+      "width": 215,
+      "description": "Starts from the validated opportunity that crossed the bridge from layer 1. Turn the opportunity into one question: how might we solve this problem? Name who it is for in the question: the audience (for example, cleaning-business owners) or your own business (for example, the shop). List 3 to 5 possible solutions that answer it. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
     },
     {
       "id": "pick",

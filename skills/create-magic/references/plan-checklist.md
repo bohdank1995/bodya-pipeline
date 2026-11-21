@@ -29,7 +29,7 @@ Read `4 Validation/3 Choose how to validate.md`.
 | 6. Choose how to validate | Choose a method for each hypothesis in [[3 Choose how to validate]]. Write the next steps |
 | 8. Result + decision | Count the people for and against each hypothesis in [[6 Result and decision]]. Compare with the success bars and the verdict rule. Decide: keep, narrow, change or stop. Write what you learned and the next step |
 | Share | Write the post or the portfolio case in [[7 Share]] |
-| 9. Gate | Run the six checks in [[8 Gate]]. If it passes, write [[5 Validated outcome]] |
+| 9. Gate | Run the six checks in [[8 Gate]]. If it passes, write [[5 Validated opportunity]] |
 
 ## The script
 

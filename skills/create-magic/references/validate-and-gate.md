@@ -37,5 +37,5 @@ Read `Gate rules`, the lap's notes, the evidence log and `2 Target Audience.md`.
 1. Go through the six checks. For each, write what you found in the notes and whether it passes.
 2. Show the checklist and the gate result it points to: pass, not yet or fail.
 3. He makes the final call.
-4. On pass, fill the validated outcome template with up to 3 rows of strongest evidence by number. After his OK, write the checklist and the result into `4 Validation/8 Gate.md`, and the validated outcome into `5 Validated outcome.md`.
+4. On pass, fill the validated opportunity template with up to 3 rows of strongest evidence by number. After his OK, write the checklist and the result into `4 Validation/8 Gate.md`, and the validated opportunity into `5 Validated opportunity.md`.
 5. On not yet, go back to stage 7, part 2. On fail, offer a new lap: a new validation folder, starting at stage 4.
