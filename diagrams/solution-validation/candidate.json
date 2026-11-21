@@ -64,10 +64,10 @@
       "lane": "plan",
       "col": 1,
       "type": "frontend",
-      "label": "Explore ways to achieve it",
-      "sublabel": "from all evidence we have",
-      "width": 180,
-      "description": "Starts from the validated outcome that crossed the bridge from layer 1. List the possible ways to deliver the outcome. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
+      "label": "Explore solutions",
+      "sublabel": "how might we solve this problem?",
+      "width": 215,
+      "description": "Starts from the validated opportunity that crossed the bridge from layer 1. Turn the opportunity into one question: how might we solve this problem? Name who it is for in the question: the audience (for example, cleaning-business owners) or your own business (for example, the shop). List 3 to 5 possible solutions that answer it. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
     },
     {
       "id": "pick",
