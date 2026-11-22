@@ -1,19 +1,19 @@
 # Plan the test: stages 4 to 6
 
-Choose what to validate, hypotheses + bar, choose how to validate. Each has its own note in the lap's folder, `4 Validation/`.
+Choose desire to validate, hypotheses + bar, choose how to validate. Each has its own note in the lap's folder, `4 Validation/`.
 
-## Stage 4. Choose what to validate
+## Stage 4. Choose desire to validate
 
-Read `Choose what to validate rules`, `1 Vision.md`, `2 Target Audience.md` and `3 Desired Outcomes.md`.
+Read `Choose desire to validate rules`, `1 Vision.md`, `2 Target Audience.md` and `3 Desired Outcomes.md`.
 
 1. He picks one outcome.
 2. Turn it into the statement: "We validate that [audience] [feel / experience / do this] when [situation]". Take the audience from the audience note exactly as written. Ask for the situation if the notes do not give it.
 3. Fix anything that breaks the rules: two feelings in one statement, a wish instead of the present, a solution word, a number. Explain each fix in one line.
-4. Show the statement and the checklist result. After his OK, create `4 Validation/1 Choose what to validate.md` with the outcome as a link to `3 Desired Outcomes` and the statement. Write no status. Leave the hypotheses and the methods for the next stages.
+4. Show the statement and the checklist result. After his OK, create `4 Validation/1 Choose desire to validate.md` with the outcome as a link to `3 Desired Outcomes` and the statement. Write no status. Leave the hypotheses and the methods for the next stages.
 
 ## Stage 5. Hypotheses + bar
 
-Read `Hypothesis rules` and `4 Validation/1 Choose what to validate.md`.
+Read `Hypothesis rules` and `4 Validation/1 Choose desire to validate.md`.
 
 1. Ask him to write his hypotheses plainly, in any form.
 2. For each one, ask only the questions needed to fill the template: who exactly, what they do or feel, how often or how many, the number, the sample size, and the kind of evidence.

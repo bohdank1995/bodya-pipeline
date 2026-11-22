@@ -15,13 +15,13 @@ This file holds the working rules and the stage finder. Each stage's steps are i
 
 Vault root: `My Brain/`.
 
-Rules and templates, in `My Brain/Rules and templates/`: `Vision statement rules`, `Vision questions`, `Target audience rules`, `Target audience questions`, `Desired outcomes rules`, `Choose what to validate rules`, `Hypothesis rules`, `Choose how to validate rules`, `Validation profile rules`, `Evidence log rules`, `Result and decision rules`, `Gate rules`.
+Rules and templates, in `My Brain/Rules and templates/`: `Vision statement rules`, `Vision questions`, `Target audience rules`, `Target audience questions`, `Desired outcomes rules`, `Choose desire to validate rules`, `Hypothesis rules`, `Choose how to validate rules`, `Validation profile rules`, `Evidence log rules`, `Result and decision rules`, `Gate rules`.
 
 Project notes, in `My Brain/<Project>/`. The number is the order in the diagram, so the files sort in the same order:
 
 - `0 Plan.md`: a checklist of what to do in the current stage. See `references/plan-checklist.md`.
 - `1 Vision.md`, `2 Target Audience.md`, `3 Desired Outcomes.md`.
-- `4 Validation/`: one folder for one lap, with one short note for each step of the diagram: `1 Choose what to validate.md`, `2 Hypotheses and bar.md`, `3 Choose how to validate.md`, `4 Validate.md` (the validation profile), `5 Evidence log.md`, `6 Result and decision.md`, `7 Share.md`, `8 Gate.md`.
+- `4 Validation/`: one folder for one lap, with one short note for each step of the diagram: `1 Choose desire to validate.md`, `2 Hypotheses and bar.md`, `3 Choose how to validate.md`, `4 Validate.md` (the validation profile), `5 Evidence log.md`, `6 Result and decision.md`, `7 Share.md`, `8 Gate.md`.
 - `5 Validated opportunity.md`: written only when the gate passes.
 
 When a note is missing, create it with its number. Find notes by the name after the number, so a renumbered note is still found. Notes stay short. They link to each other and to the rules note they follow.
@@ -37,7 +37,7 @@ Read the project folder. Take the first row that matches, then read the referenc
 | No `1 Vision.md`, or it is empty | 1. Vision | `foundation.md` |
 | `1 Vision.md` exists, no `2 Target Audience.md` | 2. Target audience | `foundation.md` |
 | Audience exists, no `3 Desired Outcomes.md` | 3. Desired outcomes | `foundation.md` |
-| Outcomes exist, and `4 Validation/1 Choose what to validate.md` is missing or has no claim ("We validate that ...") | 4. Choose what to validate | `plan-the-test.md` |
+| Outcomes exist, and `4 Validation/1 Choose desire to validate.md` is missing or has no claim ("We validate that ...") | 4. Choose desire to validate | `plan-the-test.md` |
 | The claim exists, but `2 Hypotheses and bar.md` has no H1 row | 5. Hypotheses + bar | `plan-the-test.md` |
 | The hypotheses exist, but `3 Choose how to validate.md` has no methods table | 6. Choose how to validate | `plan-the-test.md` |
 | The methods table exists, there is no next steps table, and `4 Validate.md` has no profile | 6, part 2: next steps (offer it, he may skip it) | `plan-the-test.md` |

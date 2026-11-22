@@ -3,7 +3,7 @@
 Read this when he asks where a stage sits in the pipeline, or when you need to explain the whole path.
 
 **Validation pipeline (layer 1).** Proves that the audience has the problem.
-Vision + Target audience (starting assumptions) → Desired outcomes → 1. Choose what to validate → 2. Hypotheses + bar → 3. Choose how to validate → 4. Validate (validation profile, then the evidence log) → 5. Result + decision → Share → Gate → pass: Validated opportunity, the start of layer 2. Not yet or fail: next lap.
+Vision + Target audience (starting assumptions) → Desired outcomes → 1. Choose desire to validate → 2. Hypotheses + bar → 3. Choose how to validate → 4. Validate (validation profile, then the evidence log) → 5. Result + decision → Share → Gate → pass: Validated opportunity, the start of layer 2. Not yet or fail: next lap.
 
 **Solution validation (layer 2).** Used after the outcomes are validated.
 Validated opportunity → Explore solutions → Pick one way → Hypotheses + bar → Choose how to validate → Minimal requirements → Build → Validate → Document + decide → Share → Next lap or layer.

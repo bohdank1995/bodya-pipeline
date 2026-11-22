@@ -67,17 +67,17 @@
       "label": "Explore solutions",
       "sublabel": "how might we solve this problem?",
       "width": 215,
-      "description": "Starts from the validated opportunity that crossed the bridge from layer 1. Turn the opportunity into one question: how might we solve this problem? Name who it is for in the question: the audience (for example, cleaning-business owners) or your own business (for example, the shop). List 3 to 5 possible solutions that answer it. Draw on what you know about their processes, interview stories, social media and community research, and competitors."
+      "description": "Turn the validated opportunity into one question, then list ways to answer it.\n\n• Question: how might we solve this problem? Name who it is for: the audience or your own business.\n• List 3 to 5 possible solutions.\n• Draw on their processes, interview stories, social media and community research, and competitors.\n\nDelivery CRM: how might we help owners find an order without searching notebooks?\nOnline shop: how might we reduce cart abandonment at the shipping cost, to raise the average cart?"
     },
     {
       "id": "pick",
       "lane": "plan",
       "col": 2,
       "type": "security",
-      "label": "Pick one way",
+      "label": "Pick one solution",
       "sublabel": "most evidence, cheapest test",
       "width": 158,
-      "description": "Choose one way from the list. Prefer the one with the strongest evidence that you can test cheaply.",
+      "description": "Choose one solution from the list.\n\n• The one with the strongest evidence.\n• The one you can test cheaply.\n• One change per lap, so you know what worked.\n• Write one line on why you left the others out.",
       "icon": "decision"
     },
     {
@@ -88,7 +88,7 @@
       "label": "Hypotheses + bar",
       "sublabel": "number set before building",
       "width": 158,
-      "description": "If we do this, the outcome improves from X to Y. Write the number before building, so the result cannot change the rules.",
+      "description": "If we do this, the outcome improves from X to Y. Written before building.\n\n• Name the solution and the metric, with the baseline and the target.\n• Add what must not get worse, for example conversion.\n• Add the sample size and how long the test runs.\n• Do not move the bar after you see data.\n\nOnline shop: free shipping above a cart value raises the average cart from X to Y, and conversion falls by no more than Z.",
       "icon": "decision"
     },
     {
@@ -99,7 +99,8 @@
       "label": "Choose how to validate",
       "sublabel": "cheapest honest test",
       "width": 158,
-      "icon": "decision"
+      "icon": "decision",
+      "description": "Choose how to test the solution. Same rules as in layer 1, with stronger methods.\n\n• Prefer what people do or pay over what they say.\n• Write down what you need first: traffic, access, tools.\n\nOnline shop: an A/B test, where half of the visitors see the change.\nDelivery CRM: a smoke test page, a paid pilot or a pre-sale."
     },
     {
       "id": "requirements",
@@ -109,7 +110,8 @@
       "label": "Minimal requirements",
       "sublabel": "smallest version",
       "width": 158,
-      "icon": "decision"
+      "icon": "decision",
+      "description": "The smallest version that can answer the hypothesis.\n\n• List only what the test needs.\n• Cut everything else for this lap.\n• Define done: what you can observe when it works.\n\nOnline shop: one banner or one cart rule, not a new checkout."
     },
     {
       "id": "build",
@@ -118,7 +120,8 @@
       "type": "backend",
       "label": "Build",
       "sublabel": "fast, with AI",
-      "width": 158
+      "width": 158,
+      "description": "Build the smallest version, fast, with AI.\n\n• Build only the requirements.\n• Use AI for code, copy and layout.\n• Stop when the test can run, not when it looks finished.\n• Keep a way to switch it off."
     },
     {
       "id": "validate",
@@ -127,36 +130,50 @@
       "type": "messagebus",
       "label": "Validate",
       "sublabel": "real users, real data",
-      "width": 158
+      "width": 158,
+      "description": "Run the test with real users and real data.\n\n• Start the test and write down the date.\n• Do not change the solution or the bar while it runs.\n• Wait for the planned sample, not for a good-looking result.\n• Write each result into the evidence log."
+    },
+    {
+      "id": "evidence",
+      "lane": "test",
+      "col": 3,
+      "type": "database",
+      "label": "Evidence log",
+      "sublabel": "one row per result",
+      "width": 158,
+      "description": "One row per result of the test, the same as in layer 1.\n\n• The number per variant: orders, sign-ups or payments.\n• Which hypothesis it supports.\n• For or against.\n• The sample so far.\n• Anything unexpected you saw, even if it is not in the hypothesis."
     },
     {
       "id": "document",
       "lane": "test",
-      "col": 3,
+      "col": 2,
       "type": "security",
-      "label": "Document + decide",
-      "sublabel": "keep, narrow, change, stop",
+      "label": "Result + decision",
+      "sublabel": "count, verdict, decide",
       "width": 158,
-      "icon": "decision"
+      "icon": "decision",
+      "description": "Count, compare with the bar, decide, and let the evidence change the next steps.\n\n• Compare the result with the bar from the hypothesis.\n• Decision: keep, narrow, change or stop.\n• If the evidence shows the opportunity itself was wrong, go back to layer 1."
     },
     {
       "id": "share",
       "lane": "test",
-      "col": 2,
+      "col": 1,
       "type": "cloud",
       "label": "Share",
       "sublabel": "X post, portfolio case",
-      "width": 158
+      "width": 158,
+      "description": "Share the result in public. It builds your personal brand.\n\n• An X post: the change, the number, what you learned.\n• A portfolio case: the opportunity, the solution, the result.\n• Share the real result, including a failed one.\n• Leave out anything that identifies a person or a business."
     },
     {
       "id": "next",
       "lane": "test",
-      "col": 1,
+      "col": 0,
       "type": "security",
       "icon": "decision",
       "label": "Next lap or layer",
       "sublabel": "repeat or go deeper",
-      "width": 158
+      "width": 158,
+      "description": "Decide what happens next from the evidence.\n\n• Keep: go to the next layer, for example roll out to everyone or test a bigger change.\n• Narrow or change: next lap from Pick one solution, with a smaller segment or another solution.\n• Stop: back to Explore solutions.\n• Wrong opportunity: back to layer 1."
     }
   ],
   "edges": [
@@ -194,11 +211,16 @@
       "role": "branch"
     },
     {
-      "id": "e-validate-document",
+      "id": "e-validate-evidence",
       "from": "validate",
+      "to": "evidence",
+      "role": "branch"
+    },
+    {
+      "id": "e-evidence-document",
+      "from": "evidence",
       "to": "document",
-      "role": "branch",
-      "variant": "emphasis"
+      "role": "branch"
     },
     {
       "id": "e-document-share",
@@ -217,6 +239,14 @@
       "from": "next",
       "to": "list",
       "label": "next lap",
+      "variant": "dashed",
+      "role": "return"
+    },
+    {
+      "id": "e-next-pick",
+      "from": "next",
+      "to": "pick",
+      "label": "narrow or change",
       "variant": "dashed",
       "role": "return"
     }

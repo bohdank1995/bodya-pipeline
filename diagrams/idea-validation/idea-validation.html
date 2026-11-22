@@ -1839,7 +1839,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       color: var(--text);
       font-size: 0.75rem;
       line-height: 1.5;
-      white-space: normal;
+      white-space: pre-line;
     }
     .semantic-passport-description[hidden] { display: none; }
     /* A node with an authored description shows only title, subtitle and description. */
@@ -5224,7 +5224,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1234 534" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
+      <svg viewBox="0 0 1240 534" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="">
         <title id="archify-diagram-title">Validation Pipeline</title>
         <desc id="archify-diagram-description">Validates the high-level problems behind the vision and target audience, to prove that the direction is relevant and that people are willing to pay for it.</desc>
         <!-- Definitions -->
@@ -5271,13 +5271,13 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1184" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / Foundation</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="178" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="178" width="1184" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="200" class="t-muted" font-size="10" font-weight="600">02 / Validation</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="304" width="1178" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="304" width="1184" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="326" class="t-muted" font-size="10" font-weight="600">03 / After validating</text>
 
         <!-- Phase headers -->
@@ -5289,18 +5289,25 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <!-- Edge paths -->
         <path data-edge-from="audience" data-edge-to="outcomes" data-edge-label="turn into" data-edge-key="0" data-edge-id="e-audience-outcomes" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="420.4,120;481.5999999999999,120" d="M 420.4 120 L 481.5999999999999 120" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="choose" data-edge-to="formulate" data-edge-key="1" data-edge-id="e-choose-formulate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="639.5999999999999,246;671.5999999999999,246" d="M 639.5999999999999 246 L 671.5999999999999 246" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="evidence" data-edge-to="result" data-edge-key="2" data-edge-id="e-evidence-result" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1051.6,372;829.5999999999999,372" d="M 1051.6 372 L 829.5999999999999 372" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="formulate" data-edge-to="how" data-edge-key="3" data-edge-id="e-formulate-how" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="829.5999999999999,246;861.5999999999999,246" d="M 829.5999999999999 246 L 861.5999999999999 246" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="gate" data-edge-to="choose" data-edge-label="next lap" data-edge-key="4" data-edge-id="e-gate-choose" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="341.4,346;341.4,246;481.5999999999999,246" d="M 341.4 346 L 341.4 254 Q 341.4 246 349.4 246 L 481.5999999999999 246" class="a-dashed" data-animate="edge" style="--step:11" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="how" data-edge-to="validate" data-edge-key="5" data-edge-id="e-how-validate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="1019.5999999999999,246;1051.6,246" d="M 1019.5999999999999 246 L 1051.6 246" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="choose" data-edge-to="formulate" data-edge-key="1" data-edge-id="e-choose-formulate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="645.5999999999999,246;677.5999999999999,246" d="M 645.5999999999999 246 L 677.5999999999999 246" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="evidence" data-edge-to="result" data-edge-key="2" data-edge-id="e-evidence-result" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1057.6,372;835.5999999999999,372" d="M 1057.6 372 L 835.5999999999999 372" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="formulate" data-edge-to="how" data-edge-key="3" data-edge-id="e-formulate-how" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="835.5999999999999,246;867.5999999999999,246" d="M 835.5999999999999 246 L 867.5999999999999 246" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="gate" data-edge-to="choose" data-edge-label="next lap" data-edge-key="4" data-edge-id="e-gate-choose" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="341.4,346;341.4,246;475.5999999999999,246" d="M 341.4 346 L 341.4 254 Q 341.4 246 349.4 246 L 475.5999999999999 246" class="a-dashed" data-animate="edge" style="--step:11" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="how" data-edge-to="validate" data-edge-key="5" data-edge-id="e-how-validate" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="1025.6,246;1057.6,246" d="M 1025.6 246 L 1057.6 246" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="outcomes" data-edge-to="choose" data-edge-label="pick one" data-edge-key="6" data-edge-id="e-outcomes-choose" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="560.5999999999999,146;560.5999999999999,212" d="M 560.5999999999999 146 L 560.5999999999999 212" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="result" data-edge-to="gate" data-edge-key="7" data-edge-id="e-result-gate" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="671.5999999999999,372;420.4,372" d="M 671.5999999999999 372 L 420.4 372" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="validate" data-edge-to="evidence" data-edge-key="8" data-edge-id="e-validate-evidence" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1130.6,280;1130.6,338" d="M 1130.6 280 L 1130.6 338" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="result" data-edge-to="gate" data-edge-key="7" data-edge-id="e-result-gate" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="677.5999999999999,372;420.4,372" d="M 677.5999999999999 372 L 420.4 372" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="validate" data-edge-to="evidence" data-edge-key="8" data-edge-id="e-validate-evidence" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="1136.6,280;1136.6,338" d="M 1136.6 280 L 1136.6 338" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="vision" data-edge-to="audience" data-edge-label="for whom" data-edge-key="9" data-edge-id="e-vision-audience" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="206,120;262.4,120" d="M 206 120 L 262.4 120" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
 
         <!-- Nodes -->
-        <g id="node-vision" data-node-id="vision" data-node-label="Vision" tabindex="0" role="button" aria-label="Focus Vision, where we want to get to, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="where we want to get to" data-node-description="The change you want to create, in one or two sentences. It is a direction you choose, not a proven fact, so it stays a starting assumption until evidence supports it." data-node-context="Foundation › Starting assumptions">
+        <g id="node-vision" data-node-id="vision" data-node-label="Vision" tabindex="0" role="button" aria-label="Focus Vision, where we want to get to, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="where we want to get to" data-node-description="A picture of how life gets better for the people you help. The &quot;after&quot; picture.
+
+• Write about their life, not your product.
+• One or two sentences.
+• No money, no numbers.
+
+Real example (Delivery CRM):
+Owners spend their days growing their business, not holding it together." data-node-context="Foundation › Starting assumptions">
           <title>Vision · where we want to get to · Foundation › Starting assumptions</title>
           <rect x="48" y="94" width="158" height="52" rx="8" class="c-mask"/>
           <rect x="48" y="94" width="158" height="52" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
@@ -5311,7 +5318,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="127" y="132" class="t-muted" font-size="8" text-anchor="middle">where we want to get to</text>
         </g>
 
-        <g id="node-audience" data-node-id="audience" data-node-label="Target audience" tabindex="0" role="button" aria-label="Focus Target audience, who we build it for, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="who we build it for" data-node-description="The specific group of people the vision is for: who they are, which segment first, and who qualifies. A starting assumption that the evidence will keep, narrow or change." data-node-context="Foundation › Starting assumptions">
+        <g id="node-audience" data-node-id="audience" data-node-label="Target audience" tabindex="0" role="button" aria-label="Focus Target audience, who we build it for, Foundation › Starting assumptions" aria-pressed="false" data-node-kind="external" data-node-sublabel="who we build it for" data-node-description="The exact group of people you build this for. Start small, with a group you could list name by name.
+
+One sentence:
+[Role] of a [type of business] in [place], with [size], who [trigger] and needs to [job].
+
+Check yourself:
+• Can you name real people in the group?
+• Do you know where to find them?
+• Have you talked to at least one of them?
+
+Real example (Delivery CRM):
+An owner of a carpet and furniture cleaning business in Lviv, with 3 to 4 people including the owner, who is frustrated by searching for order and customer data in notebooks, Excel and chats, and who misses orders, and needs to structure the business data." data-node-context="Foundation › Starting assumptions">
           <title>Target audience · who we build it for · Foundation › Starting assumptions</title>
           <rect x="262.4" y="94" width="158" height="52" rx="8" class="c-mask"/>
           <rect x="262.4" y="94" width="158" height="52" rx="8" class="c-external" data-animate="node" style="--step:1" stroke-width="1.5"/>
@@ -5322,7 +5340,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="341.4" y="132" class="t-muted" font-size="8" text-anchor="middle">who we build it for</text>
         </g>
 
-        <g id="node-outcomes" data-node-id="outcomes" data-node-label="Desired outcomes" tabindex="0" role="button" aria-label="Focus Desired outcomes, what they want, Foundation" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="what they want" data-node-context="Foundation">
+        <g id="node-outcomes" data-node-id="outcomes" data-node-label="Desired outcomes" tabindex="0" role="button" aria-label="Focus Desired outcomes, what they want, Foundation" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="what they want" data-node-description="The concrete results your audience wants, on the way to the vision. Think of the drill:
+
+• Nobody wants a drill. That is the product.
+• They want a hole. That is an outcome: concrete, and they would notice it.
+• They want the hole to hang a picture. That is the bigger result, close to the vision.
+
+Write each outcome as one line: less (or more) of something, in a moment they know. Keep 3 to 5.
+
+Delivery CRM:
+• Drill: a CRM app.
+• Hole: less time finding an order, fewer missed orders.
+• Picture on the wall: owners spend their days growing their business." data-node-context="Foundation">
           <title>Desired outcomes · what they want · Foundation</title>
           <rect x="481.5999999999999" y="94" width="158" height="52" rx="8" class="c-mask"/>
           <rect x="481.5999999999999" y="94" width="158" height="52" rx="8" class="c-frontend" data-animate="node" style="--step:2" stroke-width="1.5"/>
@@ -5334,58 +5363,91 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="560.5999999999999" y="132" class="t-muted" font-size="8" text-anchor="middle">what they want</text>
         </g>
 
-        <g id="node-choose" data-node-id="choose" data-node-label="Choose what to validate" tabindex="0" role="button" aria-label="Focus Choose what to validate, one outcome or claim, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="one outcome or claim" data-node-tag="step 1" data-node-context="Validation">
-          <title>Choose what to validate · one outcome or claim · Validation · step 1</title>
-          <rect x="481.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="481.5999999999999" y="212" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(487.5999999999999 218) scale(0.6875)">
+        <g id="node-choose" data-node-id="choose" data-node-label="Choose desire to validate" tabindex="0" role="button" aria-label="Focus Choose desire to validate, one outcome or claim, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="one outcome or claim" data-node-description="One claim about the present that you test next. It is a decision, not research.
+
+• Format: we validate that [audience] [feel / do this] when [situation].
+• One feeling or one behavior per statement.
+• No product words and no numbers.
+• It comes from one desired outcome.
+
+Delivery CRM: owners feel overwhelmed when they search for an order.
+Online shop: visitors leave the cart when they see the shipping cost." data-node-tag="step 1" data-node-context="Validation">
+          <title>Choose desire to validate · one outcome or claim · Validation · step 1</title>
+          <rect x="475.5999999999999" y="212" width="170" height="68" rx="8" class="c-mask"/>
+          <rect x="475.5999999999999" y="212" width="170" height="68" rx="8" class="c-security" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(481.5999999999999 218) scale(0.6875)">
             <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="560.5999999999999" y="244" class="t-primary" font-size="10.8" font-weight="600" text-anchor="middle">Choose what to validate</text>
+          <text data-node-label="" data-detail-anchor="" x="560.5999999999999" y="244" class="t-primary" font-size="10.8" font-weight="600" text-anchor="middle">Choose desire to validate</text>
           <text data-detail="context" x="560.5999999999999" y="258.9" class="t-muted" font-size="8" text-anchor="middle">one outcome or claim</text>
         <text data-detail="fine" x="560.5999999999999" y="271.7" class="t-security" font-size="7" text-anchor="middle">step 1</text>
         </g>
 
-        <g id="node-formulate" data-node-id="formulate" data-node-label="Hypotheses + bar" tabindex="0" role="button" aria-label="Focus Hypotheses + bar, number set before testing, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="number set before testing" data-node-tag="step 2" data-node-context="Validation">
+        <g id="node-formulate" data-node-id="formulate" data-node-label="Hypotheses + bar" tabindex="0" role="button" aria-label="Focus Hypotheses + bar, number set before testing, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="number set before testing" data-node-description="Turn the claim into hypotheses, each with a success bar set before testing.
+
+• One hypothesis per aspect: frequency, cost, workaround, feeling.
+• Each has a number: how many people, and how many of them.
+• Write the bar before the first call and do not move it.
+• Add the verdict rule: what counts as validated." data-node-tag="step 2" data-node-context="Validation">
           <title>Hypotheses + bar · number set before testing · Validation · step 2</title>
-          <rect x="671.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="671.5999999999999" y="212" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(677.5999999999999 218) scale(0.6875)">
+          <rect x="677.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="677.5999999999999" y="212" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(683.5999999999999 218) scale(0.6875)">
             <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="750.5999999999999" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Hypotheses + bar</text>
-          <text data-detail="context" x="750.5999999999999" y="250" class="t-muted" font-size="8" text-anchor="middle">number set before testing</text>
-        <text data-detail="fine" x="750.5999999999999" y="268" class="t-security" font-size="7" text-anchor="middle">step 2</text>
+          <text data-node-label="" data-detail-anchor="" x="756.5999999999999" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Hypotheses + bar</text>
+          <text data-detail="context" x="756.5999999999999" y="250" class="t-muted" font-size="8" text-anchor="middle">number set before testing</text>
+        <text data-detail="fine" x="756.5999999999999" y="268" class="t-security" font-size="7" text-anchor="middle">step 2</text>
         </g>
 
-        <g id="node-how" data-node-id="how" data-node-label="Choose how to validate" tabindex="0" role="button" aria-label="Focus Choose how to validate, cheapest honest test, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="cheapest honest test" data-node-tag="step 3" data-node-context="Validation">
+        <g id="node-how" data-node-id="how" data-node-label="Choose how to validate" tabindex="0" role="button" aria-label="Focus Choose how to validate, cheapest honest test, Validation" aria-pressed="false" data-node-kind="security" data-node-sublabel="cheapest honest test" data-node-description="Choose a method for each hypothesis, and what you need to start.
+
+• Match the method to the bar: interview, show me, observation, survey, community or review mining, or existing data.
+• Prefer what people do over what they say.
+• Choose the cheapest honest method.
+• Methods with no people can start today.
+
+Online shop: the order and checkout data you already have." data-node-tag="step 3" data-node-context="Validation">
           <title>Choose how to validate · cheapest honest test · Validation · step 3</title>
-          <rect x="861.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="861.5999999999999" y="212" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(867.5999999999999 218) scale(0.6875)">
+          <rect x="867.5999999999999" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="867.5999999999999" y="212" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(873.5999999999999 218) scale(0.6875)">
             <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="940.5999999999999" y="244.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Choose how to validate</text>
-          <text data-detail="context" x="940.5999999999999" y="259.1" class="t-muted" font-size="8" text-anchor="middle">cheapest honest test</text>
-        <text data-detail="fine" x="940.5999999999999" y="271.9" class="t-security" font-size="7" text-anchor="middle">step 3</text>
+          <text data-node-label="" data-detail-anchor="" x="946.5999999999999" y="244.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Choose how to validate</text>
+          <text data-detail="context" x="946.5999999999999" y="259.1" class="t-muted" font-size="8" text-anchor="middle">cheapest honest test</text>
+        <text data-detail="fine" x="946.5999999999999" y="271.9" class="t-security" font-size="7" text-anchor="middle">step 3</text>
         </g>
 
-        <g id="node-validate" data-node-id="validate" data-node-label="Validate" tabindex="0" role="button" aria-label="Focus Validate, profile, then calls, Validation" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="profile, then calls" data-node-description="Starts with the validation profile: who, how many, which methods and what counts. Then you talk to the people in the profile." data-node-tag="step 4" data-node-context="Validation">
+        <g id="node-validate" data-node-id="validate" data-node-label="Validate" tabindex="0" role="button" aria-label="Focus Validate, profile, then calls, Validation" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="profile, then calls" data-node-description="Run the methods. Start with the validation profile, then talk to the people or read the data.
+
+• Profile: who, how many, which methods, what counts.
+• Ask about the last real case, never &quot;would you&quot;.
+• Write each piece of evidence into the evidence log as it comes." data-node-tag="step 4" data-node-context="Validation">
           <title>Validate · profile, then calls · Validation · step 4</title>
-          <rect x="1051.6" y="212" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="1051.6" y="212" width="158" height="68" rx="8" class="c-messagebus" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(1057.6 218) scale(0.6875)">
+          <rect x="1057.6" y="212" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="1057.6" y="212" width="158" height="68" rx="8" class="c-messagebus" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(1063.6 218) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
             <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1130.6" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Validate</text>
-          <text data-detail="context" x="1130.6" y="250" class="t-muted" font-size="8" text-anchor="middle">profile, then calls</text>
-        <text data-detail="fine" x="1130.6" y="268" class="t-messagebus" font-size="7" text-anchor="middle">step 4</text>
+          <text data-node-label="" data-detail-anchor="" x="1136.6" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Validate</text>
+          <text data-detail="context" x="1136.6" y="250" class="t-muted" font-size="8" text-anchor="middle">profile, then calls</text>
+        <text data-detail="fine" x="1136.6" y="268" class="t-messagebus" font-size="7" text-anchor="middle">step 4</text>
         </g>
 
-        <g id="node-gate" data-node-id="gate" data-node-label="Gate" tabindex="0" role="button" aria-label="Focus Gate, all checks pass?, After validating" aria-pressed="false" data-node-kind="security" data-node-sublabel="all checks pass?" data-node-description="Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated outcome crosses the bridge into layer 2." data-node-context="After validating">
+        <g id="node-gate" data-node-id="gate" data-node-label="Gate" tabindex="0" role="button" aria-label="Focus Gate, all checks pass?, After validating" aria-pressed="false" data-node-kind="security" data-node-sublabel="all checks pass?" data-node-description="The last check before layer 2.
+
+• The bars were not moved.
+• The sample was reached.
+• The audience was right.
+• The verdict rule is met.
+• The evidence against was read.
+• The decision is keep.
+
+Result: pass writes the validated opportunity. Not yet means more evidence. Fail means a new lap." data-node-context="After validating">
           <title>Gate · all checks pass? · After validating</title>
           <rect x="262.4" y="346" width="158" height="52" rx="8" class="c-mask"/>
           <rect x="262.4" y="346" width="158" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
@@ -5396,29 +5458,41 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <text data-detail="context" x="341.4" y="384" class="t-muted" font-size="8" text-anchor="middle">all checks pass?</text>
         </g>
 
-        <g id="node-result" data-node-id="result" data-node-label="Result + decision" tabindex="0" role="button" aria-label="Focus Result + decision, count, verdict, decide, After validating" aria-pressed="false" data-node-kind="security" data-node-sublabel="count, verdict, decide" data-node-description="Count the people for and against each hypothesis, compare with its success bar, apply the verdict rule, then decide: keep, narrow, change or stop." data-node-tag="step 5" data-node-context="After validating">
+        <g id="node-result" data-node-id="result" data-node-label="Result + decision" tabindex="0" role="button" aria-label="Focus Result + decision, count, verdict, decide, After validating" aria-pressed="false" data-node-kind="security" data-node-sublabel="count, verdict, decide" data-node-description="Count, compare with the bar, apply the verdict rule, then decide.
+
+• Count the people for and against each hypothesis.
+• Compare each count with its bar.
+• Verdict: validated, not validated or unclear.
+• Decision: keep, narrow, change or stop.
+• Read the strongest evidence against first." data-node-tag="step 5" data-node-context="After validating">
           <title>Result + decision · count, verdict, decide · After validating · step 5</title>
-          <rect x="671.5999999999999" y="338" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="671.5999999999999" y="338" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(677.5999999999999 344) scale(0.6875)">
+          <rect x="677.5999999999999" y="338" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="677.5999999999999" y="338" width="158" height="68" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(683.5999999999999 344) scale(0.6875)">
             <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="750.5999999999999" y="359" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Result + decision</text>
-          <text data-detail="context" x="750.5999999999999" y="376" class="t-muted" font-size="8" text-anchor="middle">count, verdict, decide</text>
-        <text data-detail="fine" x="750.5999999999999" y="394" class="t-security" font-size="7" text-anchor="middle">step 5</text>
+          <text data-node-label="" data-detail-anchor="" x="756.5999999999999" y="359" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Result + decision</text>
+          <text data-detail="context" x="756.5999999999999" y="376" class="t-muted" font-size="8" text-anchor="middle">count, verdict, decide</text>
+        <text data-detail="fine" x="756.5999999999999" y="394" class="t-security" font-size="7" text-anchor="middle">step 5</text>
         </g>
 
-        <g id="node-evidence" data-node-id="evidence" data-node-label="Evidence log" tabindex="0" role="button" aria-label="Focus Evidence log, one row per evidence, After validating" aria-pressed="false" data-node-kind="database" data-node-sublabel="one row per evidence" data-node-description="While validating, write down what each person said or showed: one row per piece of evidence, with exact words, the hypothesis, for or against, and whether it was unprompted." data-node-tag="step 4" data-node-context="After validating">
+        <g id="node-evidence" data-node-id="evidence" data-node-label="Evidence log" tabindex="0" role="button" aria-label="Focus Evidence log, one row per evidence, After validating" aria-pressed="false" data-node-kind="database" data-node-sublabel="one row per evidence" data-node-description="One row per piece of evidence, written while you validate.
+
+• The exact words or the number, not your summary.
+• Which hypothesis it supports.
+• For or against.
+• Unprompted or asked.
+• Who it came from, so you can check the audience later." data-node-tag="step 4" data-node-context="After validating">
           <title>Evidence log · one row per evidence · After validating · step 4</title>
-          <rect x="1051.6" y="338" width="158" height="68" rx="8" class="c-mask"/>
-          <rect x="1051.6" y="338" width="158" height="68" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1057.6 344) scale(0.6875)">
+          <rect x="1057.6" y="338" width="158" height="68" rx="8" class="c-mask"/>
+          <rect x="1057.6" y="338" width="158" height="68" rx="8" class="c-database" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1063.6 344) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1130.6" y="359" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Evidence log</text>
-          <text data-detail="context" x="1130.6" y="376" class="t-muted" font-size="8" text-anchor="middle">one row per evidence</text>
-        <text data-detail="fine" x="1130.6" y="394" class="t-database" font-size="7" text-anchor="middle">step 4</text>
+          <text data-node-label="" data-detail-anchor="" x="1136.6" y="359" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Evidence log</text>
+          <text data-detail="context" x="1136.6" y="376" class="t-muted" font-size="8" text-anchor="middle">one row per evidence</text>
+        <text data-detail="fine" x="1136.6" y="394" class="t-database" font-size="7" text-anchor="middle">step 4</text>
         </g>
 
         <!-- Edge labels -->
@@ -5430,8 +5504,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <g data-detail="context" data-edge-from="gate" data-edge-to="choose" data-edge-label="next lap" data-edge-key="4" data-edge-id="e-gate-choose">
-          <rect x="387.29999999999995" y="226" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="411.49999999999994" y="236" class="t-edge-dashed" font-size="8" text-anchor="middle">next lap</text>
+          <rect x="384.29999999999995" y="226" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="408.49999999999994" y="236" class="t-edge-dashed" font-size="8" text-anchor="middle">next lap</text>
         </g>
 
         <g data-detail="context" data-edge-from="outcomes" data-edge-to="choose" data-edge-label="pick one" data-edge-key="6" data-edge-id="e-outcomes-choose">

@@ -24,7 +24,7 @@ Read `4 Validation/3 Choose how to validate.md`.
 | 1. Vision | Answer the vision questions with Claude. Pick one version. Save it as [[1 Vision]] |
 | 2. Target audience | Answer the audience questions with Claude. Write the audience statement. Fill in the fields in [[2 Target Audience]] |
 | 3. Desired outcomes | List the outcomes people want. Sort them and write the chain. Save it as [[3 Desired Outcomes]] |
-| 4. Choose what to validate | Pick one outcome from [[3 Desired Outcomes]]. Write the claim in [[1 Choose what to validate]] |
+| 4. Choose desire to validate | Pick one outcome from [[3 Desired Outcomes]]. Write the claim in [[1 Choose desire to validate]] |
 | 5. Hypotheses + bar | Write 3 to 5 hypotheses in [[2 Hypotheses and bar]]. Give each one a success bar with a number. Write the rule for the whole claim |
 | 6. Choose how to validate | Choose a method for each hypothesis in [[3 Choose how to validate]]. Write the next steps |
 | 8. Result + decision | Count the people for and against each hypothesis in [[6 Result and decision]]. Compare with the success bars and the verdict rule. Decide: keep, narrow, change or stop. Write what you learned and the next step |
