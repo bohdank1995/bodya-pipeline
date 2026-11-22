@@ -60,7 +60,7 @@
       "label": "Vision",
       "sublabel": "where we want to get to",
       "width": 158,
-      "description": "The change you want to create, in one or two sentences. It is a direction you choose, not a proven fact, so it stays a starting assumption until evidence supports it."
+      "description": "A picture of how life gets better for the people you help. The \"after\" picture.\n\n• Write about their life, not your product.\n• One or two sentences.\n• No money, no numbers.\n\nReal example (Delivery CRM):\nOwners spend their days growing their business, not holding it together."
     },
     {
       "id": "audience",
@@ -71,7 +71,7 @@
       "label": "Target audience",
       "sublabel": "who we build it for",
       "width": 158,
-      "description": "The specific group of people the vision is for: who they are, which segment first, and who qualifies. A starting assumption that the evidence will keep, narrow or change."
+      "description": "The exact group of people you build this for. Start small, with a group you could list name by name.\n\nOne sentence:\n[Role] of a [type of business] in [place], with [size], who [trigger] and needs to [job].\n\nCheck yourself:\n• Can you name real people in the group?\n• Do you know where to find them?\n• Have you talked to at least one of them?\n\nReal example (Delivery CRM):\nAn owner of a carpet and furniture cleaning business in Lviv, with 3 to 4 people including the owner, who is frustrated by searching for order and customer data in notebooks, Excel and chats, and who misses orders, and needs to structure the business data."
     },
     {
       "id": "outcomes",
@@ -81,18 +81,20 @@
       "icon": "start",
       "label": "Desired outcomes",
       "sublabel": "what they want",
-      "width": 158
+      "width": 158,
+      "description": "The concrete results your audience wants, on the way to the vision. Think of the drill:\n\n• Nobody wants a drill. That is the product.\n• They want a hole. That is an outcome: concrete, and they would notice it.\n• They want the hole to hang a picture. That is the bigger result, close to the vision.\n\nWrite each outcome as one line: less (or more) of something, in a moment they know. Keep 3 to 5.\n\nDelivery CRM:\n• Drill: a CRM app.\n• Hole: less time finding an order, fewer missed orders.\n• Picture on the wall: owners spend their days growing their business."
     },
     {
       "id": "choose",
       "lane": "validation",
       "col": 2,
       "type": "security",
-      "label": "Choose what to validate",
+      "label": "Choose desire to validate",
       "sublabel": "one outcome or claim",
-      "width": 158,
+      "width": 170,
       "tag": "step 1",
-      "icon": "decision"
+      "icon": "decision",
+      "description": "One claim about the present that you test next. It is a decision, not research.\n\n• Format: we validate that [audience] [feel / do this] when [situation].\n• One feeling or one behavior per statement.\n• No product words and no numbers.\n• It comes from one desired outcome.\n\nDelivery CRM: owners feel overwhelmed when they search for an order.\nOnline shop: visitors leave the cart when they see the shipping cost."
     },
     {
       "id": "formulate",
@@ -103,7 +105,8 @@
       "sublabel": "number set before testing",
       "width": 158,
       "tag": "step 2",
-      "icon": "decision"
+      "icon": "decision",
+      "description": "Turn the claim into hypotheses, each with a success bar set before testing.\n\n• One hypothesis per aspect: frequency, cost, workaround, feeling.\n• Each has a number: how many people, and how many of them.\n• Write the bar before the first call and do not move it.\n• Add the verdict rule: what counts as validated."
     },
     {
       "id": "how",
@@ -114,7 +117,8 @@
       "sublabel": "cheapest honest test",
       "width": 158,
       "tag": "step 3",
-      "icon": "decision"
+      "icon": "decision",
+      "description": "Choose a method for each hypothesis, and what you need to start.\n\n• Match the method to the bar: interview, show me, observation, survey, community or review mining, or existing data.\n• Prefer what people do over what they say.\n• Choose the cheapest honest method.\n• Methods with no people can start today.\n\nOnline shop: the order and checkout data you already have."
     },
     {
       "id": "validate",
@@ -125,7 +129,7 @@
       "sublabel": "profile, then calls",
       "width": 158,
       "tag": "step 4",
-      "description": "Starts with the validation profile: who, how many, which methods and what counts. Then you talk to the people in the profile."
+      "description": "Run the methods. Start with the validation profile, then talk to the people or read the data.\n\n• Profile: who, how many, which methods, what counts.\n• Ask about the last real case, never \"would you\".\n• Write each piece of evidence into the evidence log as it comes."
     },
     {
       "id": "evidence",
@@ -136,7 +140,7 @@
       "sublabel": "one row per evidence",
       "tag": "step 4",
       "width": 158,
-      "description": "While validating, write down what each person said or showed: one row per piece of evidence, with exact words, the hypothesis, for or against, and whether it was unprompted."
+      "description": "One row per piece of evidence, written while you validate.\n\n• The exact words or the number, not your summary.\n• Which hypothesis it supports.\n• For or against.\n• Unprompted or asked.\n• Who it came from, so you can check the audience later."
     },
     {
       "id": "result",
@@ -148,7 +152,7 @@
       "sublabel": "count, verdict, decide",
       "tag": "step 5",
       "width": 158,
-      "description": "Count the people for and against each hypothesis, compare with its success bar, apply the verdict rule, then decide: keep, narrow, change or stop."
+      "description": "Count, compare with the bar, apply the verdict rule, then decide.\n\n• Count the people for and against each hypothesis.\n• Compare each count with its bar.\n• Verdict: validated, not validated or unclear.\n• Decision: keep, narrow, change or stop.\n• Read the strongest evidence against first."
     },
     {
       "id": "gate",
@@ -159,7 +163,7 @@
       "label": "Gate",
       "sublabel": "all checks pass?",
       "width": 158,
-      "description": "Checks the previous steps before a solution can start: the bars were not moved, the sample was reached, the audience was right, the verdict rule is met, the evidence against was read, and the decision is keep. Not yet means more evidence. Fail means a new lap. When it passes, the validated outcome crosses the bridge into layer 2."
+      "description": "The last check before layer 2.\n\n• The bars were not moved.\n• The sample was reached.\n• The audience was right.\n• The verdict rule is met.\n• The evidence against was read.\n• The decision is keep.\n\nResult: pass writes the validated opportunity. Not yet means more evidence. Fail means a new lap."
     }
   ],
   "edges": [

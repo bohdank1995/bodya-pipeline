@@ -89,7 +89,7 @@ def lap_folder(vault):
 def completed(vault):
     """Return {step id: done?} for every step the notes can tell us about."""
     lap = lap_folder(vault)
-    choose = read(lap, "Choose what to validate.md")
+    choose = read(lap, "Choose desire to validate.md")
     hypotheses = read(lap, "Hypotheses and bar.md")
     how = read(lap, "Choose how to validate.md")
     profile = read(lap, "Validate.md")
@@ -287,7 +287,7 @@ STAGE_TASKS = {
     "vision": ["Answer the vision questions with Claude", "Pick one version", "Save it as [[1 Vision]]"],
     "audience": ["Answer the audience questions with Claude", "Write the audience statement", "Fill in the fields in [[2 Target Audience]]"],
     "outcomes": ["List the outcomes people want", "Sort them and write the chain", "Save it as [[3 Desired Outcomes]]"],
-    "choose": ["Pick one outcome from [[3 Desired Outcomes]]", "Write the claim in [[1 Choose what to validate]]"],
+    "choose": ["Pick one outcome from [[3 Desired Outcomes]]", "Write the claim in [[1 Choose desire to validate]]"],
     "formulate": ["Write 3 to 5 hypotheses in [[2 Hypotheses and bar]]", "Give each one a success bar with a number", "Write the rule for the whole claim"],
     "how": ["Choose a method for each hypothesis in [[3 Choose how to validate]]", "Write the next steps"],
     "result": ["Count the people for and against each hypothesis in [[6 Result and decision]]",
@@ -400,13 +400,26 @@ def sync_plan(vault, groups, folder, slug, stage_label):
     return [it for g in plan_groups_out for it in g["items"]]
 
 
+def keep_line_breaks(html_path):
+    """Archify's click popover collapses line breaks. Descriptions use bullets on separate
+    lines, so switch that one rule to pre-line after every render."""
+    path = os.path.join(REPO, html_path)
+    text = open(path, encoding="utf-8").read()
+    text = re.sub(r"(\.semantic-passport-description \{[^}]*?)white-space: normal;",
+                  r"\1white-space: pre-line;", text, count=1)
+    open(path, "w", encoding="utf-8").write(text)
+
+
 def finalize(candidate_path, html_path, out_dir):
     shutil.rmtree(out_dir, ignore_errors=True)  # receipts are generated; start clean each run
     cmd = ["node", ARCHIFY, "finalize", "workflow", candidate_path, html_path,
            "--quality", "showcase", "--out-dir", out_dir, "--json"]
     r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True)
     try:
-        return json.loads(r.stdout)
+        result = json.loads(r.stdout)
+        if result.get("status") == "pass":
+            keep_line_breaks(html_path)
+        return result
     except ValueError:
         return {"status": "fail", "diagnostics": [{"code": "no-json", "message": (r.stdout + r.stderr)[-400:]}]}
 
